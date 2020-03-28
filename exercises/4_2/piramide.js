@@ -1,5 +1,4 @@
 let n = 7;
-let chart = '';
 let txt = [];
 let midle = ((n - 1) / 2) + 1;
 

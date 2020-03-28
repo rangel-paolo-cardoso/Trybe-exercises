@@ -1,5 +1,4 @@
 let n = 7;
-let chart = '';
 let txt = [];
 let midle = ((n - 1) / 2) + 1;
 
@@ -12,7 +11,8 @@ for(let i = 0; i < n ; i++) {
 txt[midle - 1] = '*';
 
 for(let i = 0 ; i <= midle-1 ; i++) {
-    txt[midle-1-i] = '*';
-    txt[midle-1+i] = '*';
     console.log(txt.join(''));
+    txt[midle-(1-i)] = '*';
+    txt[midle-(1+i)] = '*';
+    
 }

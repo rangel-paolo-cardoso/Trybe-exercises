@@ -31,4 +31,12 @@ function calculoImposto(custoProd, valorVenda) {
     }
 }
 
-//console.log(calculoImposto(10, 13));
+function comparacao(num1, num2) {
+    if(num1 > num2) {
+        return `Entre ${num1} e ${num2} o maior número é ${num1}`;
+    } else {
+        return `Entre ${num1} e ${num2} o maior número é ${num2}`;
+    }
+}
+
+//console.log(comparacao(13, 25));

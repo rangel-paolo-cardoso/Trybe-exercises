@@ -90,4 +90,9 @@ function maiorDeTres(num1, num2, num3) {
         return `O maior número é o: ${num3}`;
     }
 }
-console.log(maiorDeTres(3, 15, 8));
+
+function modulo(a, b) {
+    return `O resultado do resto da divisão de ${a} por ${b} = ${a % b}`;
+}
+
+//console.log(modulo(3, 3));

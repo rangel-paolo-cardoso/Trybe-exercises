@@ -121,4 +121,23 @@ function parDeTres(num1, num2, num3) {
     }
 }
 
-//console.log(parDeTres(7, 3, 5));
+function pecaDeXadrez(peca) {
+    switch(peca.toLowerCase()) {
+        case 'peão':
+            return 'Peão -> Para frente';
+        case 'bispo':
+            return 'Bispo -> diagonal';
+        case 'torre':
+            return 'Torre -> linha reta horizontal e verticalmente';
+        case 'cavalo':
+            return 'Cavalo -> duas casas horizontal e verticalmente mais uma casa que forme um ângulo reto';
+        case 'rainha':
+            return 'Rainha -> horizontal, vertical e diagonalmente quantas casas quiser';
+        case 'rei':
+            return 'Rei -> horizontal, vertical e diagonalmente apenas uma casa por vez';
+        default:
+            return 'Peça inválida!';
+    }
+}
+
+console.log(pecaDeXadrez('rei'));

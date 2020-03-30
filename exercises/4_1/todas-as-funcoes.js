@@ -149,4 +149,3 @@ function positiveOrNegative(numero) {
         return 'zero';
     }
 }
-console.log(positiveOrNegative(5));

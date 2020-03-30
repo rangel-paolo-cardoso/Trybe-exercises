@@ -95,4 +95,22 @@ function modulo(a, b) {
     return `O resultado do resto da divisão de ${a} por ${b} = ${a % b}`;
 }
 
-//console.log(modulo(3, 3));
+function notaPorcentagem(nota) {
+    if(nota >= 90 && nota <= 100) {
+        return 'Porcentagem >= 90 -> A';
+    } else if((nota >= 80) && (nota < 90)) {
+        return 'Porcentagem >= 80 -> B';
+    } else if((nota >= 70) && (nota < 80)) {
+        return 'Porcentagem >= 70 -> C';
+    } else if((nota >= 60) && (nota < 70)) {
+        return 'Porcentagem >= 60 -> D';
+    } else if((nota >= 50) && (nota < 60)) {
+        return 'Porcentagem >= 50 -> E';
+    } else if((nota < 50) && (nota >= 0)) {
+        return 'Porcentagem < 50 -> F';
+    } else {
+        return 'Nota inválida';
+    }
+}
+
+//console.log(notaPorcentagem(75));

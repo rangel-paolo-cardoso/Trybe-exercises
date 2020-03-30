@@ -5,4 +5,4 @@ let info = {
     recorrente: 'Sim',
   };
 
-console.log(`Bem-vinda, ${info.personagem}`)
+console.log(info)

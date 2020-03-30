@@ -39,4 +39,12 @@ function comparacao(num1, num2) {
     }
 }
 
-//console.log(comparacao(13, 25));
+function imparDeTres(num1, num2, num3) {
+    if(num1 % 2 != 0 || num2 % 2 != 0 || num3 % 2 != 0) {
+        return `Entre ${num1}, ${num2} e ${num3} existe um ímpar.`;
+    } else {
+        return `Não há impares entre ${num1}, ${num2}e ${num3}.`;;
+    }
+}
+
+//console.log(imparDeTres(12, 23, 22));

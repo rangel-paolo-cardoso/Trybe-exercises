@@ -81,4 +81,13 @@ function impostoDeRenda(salBruto) {
     return `Salário líquido é de R$ ${salarioLiquido}.`
 }
 
-console.log(impostoDeRenda(3000));
+function maiorDeTres(num1, num2, num3) {
+    if (num1 > num2 && num1 > num3) {
+        return `O maior número é o: ${num1}`;
+    } else if (num2 > num1 && num2 > num3) {
+        return `O maior número é o: ${num2}`;
+    } else {
+        return `O maior número é o: ${num3}`;
+    }
+}
+console.log(maiorDeTres(3, 15, 8));

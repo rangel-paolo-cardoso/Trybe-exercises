@@ -21,3 +21,14 @@ function angulosDoTriangulo(ang1, ang2, ang3) {
     }
     return `Os ângulos representam os ângulo internos de um triângulo? ${result}`;
 }
+
+function calculoImposto(custoProd, valorVenda) {
+    if(custoProd > 0 && valorVenda > 0) {
+        lucro = (valorVenda - custoProd * 0.8) * 1000;
+        return `O lucro da empresa foi de ${lucro}`;
+    } else {
+        return 'Erro!';
+    }
+}
+
+//console.log(calculoImposto(10, 13));

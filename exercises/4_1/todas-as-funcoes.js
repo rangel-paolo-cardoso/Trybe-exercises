@@ -113,4 +113,12 @@ function notaPorcentagem(nota) {
     }
 }
 
-//console.log(notaPorcentagem(75));
+function parDeTres(num1, num2, num3) {
+    if(num1 % 2 == 0 || num2 % 2 == 0 || num3 % 2 == 0) {
+        return `Entre ${num1}, ${num2} e ${num3} existe um par.`;
+    } else {
+        return `Não há pares entre ${num1}, ${num2}e ${num3}.`;;
+    }
+}
+
+//console.log(parDeTres(7, 3, 5));

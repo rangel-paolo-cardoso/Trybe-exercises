@@ -61,10 +61,28 @@
             let tag = document.querySelector(classeHUm);
             tag.innerHTML = 'Exercício 4.4 - ' + texto;
         }
+
+        // ex5
+        function tagPMaiusculo() {
+            let tagsP = document.getElementsByTagName('p');
+            for(let i = 0 ; i < tagsP.length ; i++) {
+                tagsP[i].innerHTML = tagsP[i].innerHTML.toUpperCase();
+            }
+        }
+
+        function retornaParagrafos() {
+            let paragrafos = document.getElementsByTagName('p');
+            for(let i = 0 ; i < tagsP.length ; i++) {
+                console.log(`${paragrafos[i].innerText}`);
+            }
+        }
+
         mudaParagrafo('Me vejo trabalhando com software development.')
         mudaBackground('main-content', '#11a36a');
         mudaCorDoVermelho('.center-content', 'white');
         corrigeHUm('.title', 'JavaScript');
+        tagPMaiusculo();
+        retornaParagrafos();
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()

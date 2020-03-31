@@ -32,4 +32,4 @@ function numerosRomanos(texto) {
     return numero;
 }
 
-console.log(numerosRomanos('DXXVIII'));
+console.log(numerosRomanos('ii'));

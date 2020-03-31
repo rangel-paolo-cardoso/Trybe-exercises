@@ -1,3 +1,4 @@
+//Objeto de auxílio.
 const romanos = {
     'I': 1,
     'V': 5,
@@ -9,6 +10,7 @@ const romanos = {
 };
 
 function numerosRomanos(texto) {
+    texto = texto.toUpperCase();
     let numero = 0;
     let vetor = [];
     for(let i = 0; i < texto.length ; i++) {
@@ -30,4 +32,4 @@ function numerosRomanos(texto) {
     return numero;
 }
 
-console.log(numerosRomanos('DXXVIII')); //495
+console.log(numerosRomanos('DXXVIII'));

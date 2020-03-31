@@ -55,9 +55,16 @@
             let quadrado = document.querySelector('.main-content '+seletor);
             quadrado.style.backgroundColor = cor;
         }
+
+        // ex4
+        function corrigeHUm(classeHUm, texto) {
+            let tag = document.querySelector(classeHUm);
+            tag.innerHTML = 'Exercício 4.4 - ' + texto;
+        }
         mudaParagrafo('Me vejo trabalhando com software development.')
         mudaBackground('main-content', '#11a36a');
         mudaCorDoVermelho('.center-content', 'white');
+        corrigeHUm('.title', 'JavaScript');
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()

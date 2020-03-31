@@ -1,3 +1,4 @@
+//Objeto de auxílio.
 const romanos = {
     'I': 1,
     'V': 5,

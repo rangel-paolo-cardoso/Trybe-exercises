@@ -49,8 +49,15 @@
             let div = document.getElementsByClassName(seletor)[0];
             div.style.backgroundColor = cor;
         }
+
+        // ex3
+        function mudaCorDoVermelho(seletor, cor) {
+            let quadrado = document.querySelector('.main-content '+seletor);
+            quadrado.style.backgroundColor = cor;
+        }
         mudaParagrafo('Me vejo trabalhando com software development.')
         mudaBackground('main-content', '#11a36a');
+        mudaCorDoVermelho('.center-content', 'white');
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()

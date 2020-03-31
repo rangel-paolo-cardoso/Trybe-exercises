@@ -44,7 +44,13 @@
             document.getElementsByTagName('p')[1].innerHTML = texto;
         }
 
+        // ex2
+        function mudaBackground(seletor, cor) {
+            let div = document.getElementsByClassName(seletor)[0];
+            div.style.backgroundColor = cor;
+        }
         mudaParagrafo('Me vejo trabalhando com software development.')
+        mudaBackground('main-content', '#11a36a');
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()

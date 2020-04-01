@@ -56,6 +56,12 @@
     </head>
     <body>
         <script>
+            let numbers = [
+                'um', 'dois', 'três', 'quatro',
+                'cinco', 'seis', 'sete', 'oito',
+                'nove', 'dez'
+            ];
+
             // passo1
             let titulo = document.createElement('h1');
             titulo.innerHTML = 'Exercício 4.5 - JavaScript DOM'
@@ -69,29 +75,37 @@
             // passo3
             let divTwo = document.createElement('div');
             divTwo.className = 'center-content';
-            document.querySelector('.'+div.className).appendChild(divTwo);
+            div.appendChild(divTwo);
 
             // passo4
             let p = document.createElement('p');
             p.innerText = 'My name is Rangel';
-            document.querySelector('.'+divTwo.className).appendChild(p);
+            divTwo.appendChild(p);
 
             // passo5
             let divThree = document.createElement('div');
             divThree.className = 'left-content';
-            document.querySelector('.'+div.className).appendChild(divThree);
+            div.appendChild(divThree);
 
             // passo6
             let divFour = document.createElement('div');
             divFour.className = 'right-content';
-            document.querySelector('.'+div.className).appendChild(divFour);
+            div.appendChild(divFour);
 
             // passo7
             let img = document.createElement('img');
             img.className = 'small-image';
             img.src = 'https://picsum.photos/200';
-            document.querySelector('.'+divThree.className).appendChild(img);
+            divThree.appendChild(img);
 
+            // passo8
+            let lista = document.createElement('ul');
+            for(let i = 0 ; i < numbers.length ; i++) {
+                let item = document.createElement('li');
+                item.innerHTML = numbers[i];
+                lista.appendChild(item);
+            }
+            divFour.appendChild(lista);
         </script>
     </body>
 </html>

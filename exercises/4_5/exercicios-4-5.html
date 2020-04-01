@@ -73,8 +73,12 @@
             document.querySelector('.'+divTwo.className).appendChild(p);
 
             let divThree = document.createElement('div');
-            div.className = 'left-content';
-            document.querySelector('.'+div.className).appendChild(divThree);            
+            divThree.className = 'left-content';
+            document.querySelector('.'+div.className).appendChild(divThree);
+
+            let divFour = document.createElement('div');
+            divFour.className = 'right-content';
+            document.querySelector('.'+div.className).appendChild(divFour);
         </script>
     </body>
 </html>

@@ -131,6 +131,12 @@
 
             // passo5
             divTwo.parentElement.style.backgroundColor = 'lime';
+
+            // passo6
+            for(let i = 2; i > 0 ; i--) {
+                let comprimento = lista.childNodes.length - 1;
+                console.log(lista.removeChild(lista.childNodes[comprimento]));
+            }
         </script>
     </body>
 </html>

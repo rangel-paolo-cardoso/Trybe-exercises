@@ -17,6 +17,9 @@
 
         function catWalk() {
             img.style.left = Number.parseInt(img.style.left) + 10 + 'px';
+            if(Number.parseInt(img.style.left) > widthScreen) {
+                img.style.left = 0;
+            }
         }
     </script>
     </body>

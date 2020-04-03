@@ -10,15 +10,16 @@
     <script>
         let img = document.querySelector('img');
         let widthScreen = window.innerWidth;
-        console.log(widthScreen);
         img.style.left = 0;
+        let distance = widthScreen - 500;
+        console.log(distance);
 
         setInterval(catWalk, 50);
 
         function catWalk() {
             img.style.left = Number.parseInt(img.style.left) + 10 + 'px';
             if(Number.parseInt(img.style.left) > widthScreen) {
-                img.style.left = 0;
+                img.style.left = distance + 'px';
             }
         }
     </script>

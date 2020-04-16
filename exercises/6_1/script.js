@@ -1,9 +1,9 @@
 const form = document.forms['formuser'];
 const msg = document.querySelector('.data-error');
 const btnEnviar = document.getElementById('btEnviar');
+const btnReset = document.getElementById('btResetar');
 const cData = document.getElementById('cData');
 const resultado = document.querySelector('.resultado');
-let formState = true;
 const objEstados = {
     'ac': 'Acre',
     'al': 'Alagoas',
@@ -81,25 +81,31 @@ function recuperaData() {
 }
 
 function configuraResultado() {
-    if (formState) {
-        const dados = document.querySelectorAll('input');
-        const estado = form.estado.value;
-        const resumo = form.resumo.value;
-        for (let i = 0; i < dados.length; i += 1) {
-            const p = document.createElement('p');
-            p.innerHTML = dados[i].value;
-            resultado.appendChild(p);
+    const dados = document.querySelectorAll('.resultado p');
+    [...form.elements].forEach(campo => {
+        if (['text', 'select-one', 'textarea'].indexOf(campo.type) > -1) {
+            document.querySelector(`span.span${campo.name}`).innerHTML = campo.value;
         }
-        resultado.style.display = 'block';
-        formState = false;
-    }
+        if (campo.name === 'tipoRes' && campo.checked) {
+            document.querySelector(`span.span${campo.name}`).innerHTML = campo.value;
+        }
+    });
 }
 
 function validaForm(event) {
     const valido = recuperaData();
     if (valido) {
+        resultado.style.display = 'block';
         configuraResultado();
     }
+}
+
+function limpaTudo() {
+    const spans = document.querySelectorAll('span');
+    for (let i = 0; i < spans.length; i +=1) {
+        spans[i].innerHTML  = '';
+    }
+    resultado.style.display = 'none';
 }
 
 window.onload = function () {
@@ -109,3 +115,5 @@ window.onload = function () {
         e.preventDefault();
     });
 };
+
+btnReset.addEventListener('click', limpaTudo);

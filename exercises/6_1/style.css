@@ -80,6 +80,13 @@ button:hover {
     color: rgb(215, 255, 255);
 }
 
+textarea {
+    height: 100px;
+    margin-top: 5px;
+    resize: none;
+    width: 60%;
+}
+
 .data-error {
     color: red;
 }

@@ -8,7 +8,7 @@ const objEstados = {
     'ac': 'Acre',
     'al': 'Alagoas',
     'ap': 'Amapá',
-    'am':'Amazonas',
+    'am': 'Amazonas',
     'ba': 'Bahia',
     'ce': 'Ceará',
     'df': 'Distrito Federal',

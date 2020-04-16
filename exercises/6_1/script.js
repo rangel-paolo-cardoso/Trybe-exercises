@@ -2,6 +2,8 @@ const form = document.forms['formuser'];
 const msg = document.querySelector('.data-error');
 const btnEnviar = document.getElementById('btEnviar');
 const cData = document.getElementById('cData');
+const resultado = document.querySelector('.resultado');
+let formState = true;
 const objEstados = {
     'ac': 'Acre',
     'al': 'Alagoas',
@@ -32,7 +34,7 @@ const objEstados = {
     'to': 'Tocantins',
 };
 
-function setEstate() {
+function setEstado() {
     const estados = document.getElementById('cEst');
     for (estado in objEstados) {
         const option = document.createElement('option');
@@ -78,17 +80,31 @@ function recuperaData() {
     }
 }
 
+function configuraResultado() {
+    if (formState) {
+        const dados = document.querySelectorAll('input');
+        const estado = form.estado.value;
+        const resumo = form.resumo.value;
+        for (let i = 0; i < dados.length; i += 1) {
+            const p = document.createElement('p');
+            p.innerHTML = dados[i].value;
+            resultado.appendChild(p);
+        }
+        resultado.style.display = 'block';
+        formState = false;
+    }
+}
+
 function validaForm(event) {
     const valido = recuperaData();
     if (valido) {
-        alert(valido);_
+        configuraResultado();
     }
 }
 
 window.onload = function () {
-    setEstate();
-    // btnEnviar.addEventListener('click', validaForm);
-    cData.addEventListener('blur', validaForm);
+    setEstado();
+    btnEnviar.addEventListener('click', validaForm);
     form.addEventListener('submit', (e) => {
         e.preventDefault();
     });

@@ -17,6 +17,9 @@ body {
 }
 
 .resultado {
+    background-color: rgb(215, 255, 255);
+    color: rgb(1, 5, 131);
+    display: none;
     margin: 10px auto;
     width: 55%;
 }

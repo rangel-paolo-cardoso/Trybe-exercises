@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form name="formuser">
-            <div class="form-body">
+        <div class="form-body">
+            <form name="formuser">
                 <fieldset>
                     <legend>Dados Pessoais</legend>
                     <p>
@@ -38,10 +38,10 @@
                     </p>
                     <p>
                         Tipo de Residencia:
-                        <input type="radio" name="tipoRes" id="cCasa"  checked required>
+                        <input type="radio" name="tipoRes" id="cCasa" value="casa" checked required>
                         <label for="cCasa">Casa</label>
 
-                        <input type="radio" name="tipoRes" id="cApt" required>
+                        <input type="radio" name="tipoRes" id="cApt" value="apartamento" required>
                         <label for="cApt">Apartamento</label>
                     </p>
                 </fieldset>
@@ -66,10 +66,10 @@
                     <p class="data-error"></p>
                     <button id="btEnviar" type="submit">Enviar</button>
                 </fieldset>
-            </div>
-        </form>
-
+            </form>
+        </div>
         <div class="resultado">
+            <h2>Dados do Candidato</h2>
         </div>
         <script src="script.js"></script>
     </body>

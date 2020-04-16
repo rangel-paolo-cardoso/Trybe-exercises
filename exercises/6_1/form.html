@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form>
+        <form name="formuser">
             <fieldset>
                 <legend>Dados Pessoais</legend>
                 <p>
@@ -16,7 +16,7 @@
                 </p>
                 <p>
                     <label for="cEmail">Email: </label>
-                    <input type="text" id="cEmail" name="email" maxlength="50" required>
+                    <input type="text" id="cEmail" name="email" pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" maxlength="50" required>
                 </p>
                 <p>
                     <label for="cCpf">CPF: </label>
@@ -35,6 +35,26 @@
                     <select name="estado" id="cEst">
                     </select>
                 </p>
+            </fieldset>
+            <fieldset>
+                <legend>Último Emprego</legend>
+                <p>
+                    <label for="cResumo">Resumo do currículo: </label>
+                    <textarea name="resumo" id="cResumo" cols="30" rows="10" maxlength="1000" required></textarea>
+                </p>
+                <p>
+                    <label for="cCargo">Cargo: </label>
+                    <input type="text" id="cCargo" name="cargo" maxlength="40" required>
+                </p>
+                <p>
+                    <label for="cDesc">Descrição do cargo: </label>
+                    <input type="text" id="cDesc" name="descricao" maxlength="500" required>
+                </p>
+                <p>
+                    <label for="cData">Data de início: </label>
+                    <input type="text" id="cData" name="dataInic" required>
+                </p>
+                <button id="btEnviar" type="submit">Enviar</button>
             </fieldset>
         </form>
         <script src="script.js"></script>

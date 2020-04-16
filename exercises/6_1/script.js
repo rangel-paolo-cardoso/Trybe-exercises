@@ -32,11 +32,13 @@ function setEstate() {
     const estados = document.getElementById('cEst');
     for (estado in objEstados) {
         const option = document.createElement('option');
-        option.innerText = objEstados[estado];   
+        option.value = estado;
+        option.innerText = objEstados[estado];
         estados.appendChild(option);
     }
 }
 
 window.onload = function () {
     setEstate();
+    btnEnviar.addEventListener('click', alert);
 };

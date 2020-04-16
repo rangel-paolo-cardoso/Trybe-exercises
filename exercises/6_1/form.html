@@ -8,62 +8,69 @@
     </head>
     <body>
         <form name="formuser">
-            <fieldset>
-                <legend>Dados Pessoais</legend>
-                <p>
-                    <label for="cNome">Nome: </label>
-                    <input type="text" id="cNome" name="nome" maxlength="40" required>
-                </p>
-                <p>
-                    <label for="cEmail">Email: </label>
-                    <input type="text" id="cEmail" name="email" pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" maxlength="50" required>
-                </p>
-                <p>
-                    <label for="cCpf">CPF: </label>
-                    <input type="text" id="cCpf" name="cpf" pattern="^([0-9]{3}\.){2}([0-9]{3}-)([0-9]{2})$" maxlength="14" required>
-                </p>
-                <p>
-                    <label for="cEnd">Endereço: </label>
-                    <input type="text" id="cEnd" name="endereco" maxlength="200" required>
-                </p>
-                <p>
-                    <label for="cCid">Cidade: </label>
-                    <input type="text" id="cCid" name="cidade" maxlength="28" required>
-                </p>
-                <p>
-                    <label for="cEst">Estado: </label>
-                    <select name="estado" id="cEst">
-                    </select>
-                </p>
-                <p>
-                    Tipo de Residencia:
-                    <input type="radio" name="tipoRes" id="cCasa">
-                    <label for="cCasa">Casa</label>
-                    <input type="radio" name="tipoRes" id="cApt">
-                    <label for="cApt">Apartamento</label>
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>Último Emprego</legend>
-                <p>
-                    <label for="cResumo">Resumo do currículo: </label>
-                    <textarea name="resumo" id="cResumo" cols="30" rows="10" maxlength="1000" required></textarea>
-                </p>
-                <p>
-                    <label for="cCargo">Cargo: </label>
-                    <input type="text" id="cCargo" name="cargo" maxlength="40" required>
-                </p>
-                <p>
-                    <label for="cDesc">Descrição do cargo: </label>
-                    <input type="text" id="cDesc" name="descricao" maxlength="500" required>
-                </p>
-                <p>
-                    <label for="cData">Data de início: </label>
-                    <input type="text" id="cData" name="dataInic" required>
-                </p>
-                <button id="btEnviar" type="submit">Enviar</button>
-            </fieldset>
+            <div class="form-body">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <p>
+                        <label for="cNome">Nome: </label>
+                        <input type="text" id="cNome" name="nome" maxlength="40" placeholder="Nome completo" required>
+                    </p>
+                    <p>
+                        <label for="cEmail">Email: </label>
+                        <input type="text" id="cEmail" name="email" placeholder="Email mais usado" pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" maxlength="50" required>
+                    </p>
+                    <p>
+                        <label for="cCpf">CPF: </label>
+                        <input type="text" id="cCpf" name="cpf" placeholder="Ex: 000.000.000-00" pattern="^([0-9]{3}\.){2}([0-9]{3}-)([0-9]{2})$" maxlength="14" required>
+                    </p>
+                    <p>
+                        <label for="cEnd">Endereço: </label>
+                        <input type="text" id="cEnd" name="endereco" placeholder="Ex: Rua, Travessa, Av." maxlength="200" required>
+                    </p>
+                    <p>
+                        <label for="cCid">Cidade: </label>
+                        <input type="text" id="cCid" name="cidade" placeholder="Cidade onde mora" maxlength="28" required>
+                    </p>
+                    <p>
+                        <label for="cEst">Estado: </label>
+                        <select name="estado" id="cEst">
+                        </select>
+                    </p>
+                    <p>
+                        Tipo de Residencia:
+                        <input type="radio" name="tipoRes" id="cCasa"  checked required>
+                        <label for="cCasa">Casa</label>
+
+                        <input type="radio" name="tipoRes" id="cApt" required>
+                        <label for="cApt">Apartamento</label>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Último Emprego</legend>
+                    <p>
+                        <label for="cResumo">Resumo do currículo: </label>
+                        <textarea name="resumo" id="cResumo" cols="30" rows="10" placeholder="..." maxlength="1000" required></textarea>
+                    </p>
+                    <p>
+                        <label for="cCargo">Cargo: </label>
+                        <input type="text" id="cCargo" name="cargo" placeholder="Ultimo cargo" maxlength="40" required>
+                    </p>
+                    <p>
+                        <label for="cDesc">Descrição do cargo: </label>
+                        <input type="text" id="cDesc" name="descricao" placeholder="O que você fazia?" maxlength="500" required>
+                    </p>
+                    <p>
+                        <label for="cData">Data de início: </label>
+                        <input type="text" id="cData" name="dataInic" placeholder="Quando começou?" pattern="(\d{2})[-.\/](\d{2})[-.\/](\d{4})" required>
+                    </p>
+                    <p class="data-error"></p>
+                    <button id="btEnviar" type="submit">Enviar</button>
+                </fieldset>
+            </div>
         </form>
+
+        <div class="resultado">
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

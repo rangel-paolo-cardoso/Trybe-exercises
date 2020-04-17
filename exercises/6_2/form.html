@@ -14,38 +14,39 @@
                 <h1 class="title is-1 has-text-centered">Cadastro Curricular</h1>
             </header>
             <section class="section">
-                <form name="formuser">
+                <form id="myForm" name="formuser">
                     <div class="content">
                         <p class="title is-2">Dados Pessoais</p>
                         <p>
+                            <div class="validate-popup"></div>
                             <label class="label is-medium">Nome: 
-                                <input type="text" id="cNome" class="input is-primary" name="nome" maxlength="40" placeholder="Nome completo" required>
+                                <input type="text" id="cNome" class="input is-primary validate form-control" data-validate="required" name="nome" maxlength="40" placeholder="Nome completo">
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Email: 
-                                <input type="text" id="cEmail" class="input is-primary" name="email" placeholder="Email mais usado" pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" maxlength="50" required>
+                                <input type="text" id="cEmail" class="input is-primary" data-validate="required,emails" name="email" placeholder="Email mais usado" maxlength="50">
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">CPF: 
-                                <input type="text" id="cCpf" class="input number is-primary" name="cpf" placeholder="Ex: 000.000.000-00" pattern="^([0-9]{3}\.){2}([0-9]{3}-)([0-9]{2})$" maxlength="14" required>
+                                <input type="text" id="cCpf" class="input number is-primary" data-validate="required" name="cpf" placeholder="Ex: 000.000.000-00" pattern="^([0-9]{3}\.){2}([0-9]{3}-)([0-9]{2})$" maxlength="14">
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Endereço: 
-                                <input type="text" id="cEnd" class="input is-primary" name="endereco" placeholder="Ex: Rua, Travessa, Av." maxlength="200" required>
+                                <input type="text" id="cEnd" class="input is-primary" data-validate="required" name="endereco" placeholder="Ex: Rua, Travessa, Av." maxlength="200">
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Cidade: 
-                                <input type="text" id="cCid" class="input is-primary" name="cidade" placeholder="Cidade onde mora" maxlength="28" required>
+                                <input type="text" id="cCid" class="input is-primary" data-validate="required" name="cidade" placeholder="Cidade onde mora" maxlength="28" required>
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Estado: 
                                 <div class="select is-medium is-fullwidth is-rounded is-primary">
-                                    <select name="estado" id="cEst">
+                                    <select name="estado" id="cEst" data-validate="required">
                                     </select>
                                 </div>
                             </label>
@@ -53,11 +54,11 @@
                         <p>
                             <p class="label is-medium">Tipo de Residência:</p>
                             <label class="label is-inline">Casa
-                                <input type="radio" name="tipoRes" id="cCasa" class="radio" value="casa" checked required>
+                                <input type="radio" name="tipoRes" id="cCasa" data-validate="required" class="radio" value="casa" checked required>
                             </label>
                         
                             <label class="label is-inline">Apartamento
-                                <input type="radio" name="tipoRes" id="cApt" class="radio" value="apartamento" required>
+                                <input type="radio" name="tipoRes" id="cApt" data-validate="required" class="radio" value="apartamento" required>
                             </label>
                         </p>
                     </div>
@@ -65,22 +66,22 @@
                         <p class="title is-2">Último Emprego</p>
                         <p>
                             <label class="label is-medium">Resumo do currículo: 
-                                <textarea name="resumo" id="cResumo" class="textarea is-primary" placeholder="..." maxlength="1000" required></textarea>
+                                <textarea name="resumo" id="cResumo" data-validate="required" class="textarea is-primary" placeholder="..." maxlength="1000" required></textarea>
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Cargo: 
-                                <input type="text" id="cCargo" class="input is-primary" name="cargo" placeholder="Ultimo cargo" maxlength="40" required>
+                                <input type="text" id="cCargo" data-validate="required" class="input is-primary" name="cargo" placeholder="Ultimo cargo" maxlength="40" required>
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Descrição do cargo: 
-                                <input type="text" id="cDesc" class="input is-primary" name="descricao" placeholder="O que você fazia?" maxlength="500" required>
+                                <input type="text" id="cDesc" data-validate="required" class="input is-primary" name="descricao" placeholder="O que você fazia?" maxlength="500" required>
                             </label>
                         </p>
                         <p>
                             <label class="label is-medium">Data de início: 
-                                <input type="text" id="cData" class="input number is-primary" name="dataInic" placeholder="Quando começou?" required>
+                                <input type="text" id="cData" data-validate="required" class="input number is-primary" name="dataInic" placeholder="Quando começou?" required>
                             </label>
                         </p>
                         <p class="data-error has-text-danger"></p>

@@ -77,6 +77,9 @@ window.onload = function () {
     cData.DatePickerX.init({
         format: 'dd/mm/yyyy',
     });
+    validation.init('#myForm', {
+        events: ['change', 'keyup', 'paste'],
+    });
     btnEnviar.addEventListener('click', validaForm);
     form.addEventListener('submit', (e) => {
         e.preventDefault();

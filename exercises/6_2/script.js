@@ -3,7 +3,7 @@ const msg = document.querySelector('.data-error');
 const btnEnviar = document.getElementById('btEnviar');
 const btnReset = document.getElementById('btResetar');
 const cData = document.getElementById('cData');
-const resultado = document.querySelector('.resultado');
+const resultado = document.getElementById('rodape');
 const objEstados = {
     'ac': 'Acre',
     'al': 'Alagoas',

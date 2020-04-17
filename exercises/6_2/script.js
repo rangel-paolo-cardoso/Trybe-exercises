@@ -44,44 +44,11 @@ function setEstado() {
     }
 }
 
-function validaDia(dia) {
-    return dia > 0 && dia <= 31;
-}
-
-function validaMes(mes) {
-    return mes > 0 && mes <= 12;
-}
-
-function validaAno(ano) {
-    return ano > 0;
-}
-
 function mensagemDeErro() {
     msg.innerText = 'Data inválida! Digite a data corretamente.'
 }
 
-function verificaData() {
-    const data = form.dataInic.value.split('/')
-    const dia = validaDia(Number.parseInt(data[0], 10));
-    const mes = validaMes(Number.parseInt(data[1], 10));
-    const ano = validaAno(Number.parseInt(data[2], 10));
-    alert(dia && mes && ano);
-    return dia && mes && ano;
-}
-
-function recuperaData() {
-    const data = form.dataInic.value.indexOf('/');
-    const result = verificaData();
-    if (data === -1 || !result) {
-        mensagemDeErro();
-    } else {
-        msg.innerText = '';
-        return true;
-    }
-}
-
 function configuraResultado() {
-    const dados = document.querySelectorAll('.resultado p');
     [...form.elements].forEach(campo => {
         if (['text', 'select-one', 'textarea'].indexOf(campo.type) > -1) {
             document.querySelector(`span.span${campo.name}`).innerHTML = campo.value;
@@ -93,11 +60,8 @@ function configuraResultado() {
 }
 
 function validaForm(event) {
-    const valido = recuperaData();
-    if (valido) {
-        resultado.style.display = 'block';
-        configuraResultado();
-    }
+    resultado.style.display = 'block';
+    configuraResultado();
 }
 
 function limpaTudo() {
@@ -110,6 +74,9 @@ function limpaTudo() {
 
 window.onload = function () {
     setEstado();
+    cData.DatePickerX.init({
+        format: 'dd/mm/yyyy',
+    });
     btnEnviar.addEventListener('click', validaForm);
     form.addEventListener('submit', (e) => {
         e.preventDefault();

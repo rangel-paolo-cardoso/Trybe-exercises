@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulário de Currículo</title>
         <link rel="stylesheet" href="bulma.min.css">
+        <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
     </head>
     <body class="hero-body has-background-light">
         <div class="container is-fluid has-background-grey-light">
@@ -78,7 +79,7 @@
                         </p>
                         <p>
                             <label class="label is-medium">Data de início: 
-                                <input type="text" id="cData" class="input number is-primary" name="dataInic" placeholder="Quando começou?" pattern="(\d{2})[-.\/](\d{2})[-.\/](\d{4})" required>
+                                <input type="text" id="cData" class="input number is-primary" name="dataInic" placeholder="Quando começou?" required>
                             </label>
                         </p>
                         <p class="data-error has-text-danger"></p>
@@ -139,6 +140,7 @@
                 </div>
             </footer>
         </div>
+        <script src="dist/js/DatePickerX.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

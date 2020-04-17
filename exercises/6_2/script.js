@@ -3,7 +3,7 @@ const msg = document.querySelector('.data-error');
 const btnEnviar = document.getElementById('btEnviar');
 const btnReset = document.getElementById('btResetar');
 const cData = document.getElementById('cData');
-const resultado = document.getElementById('rodape');
+const resultado = document.querySelector('footer');
 const objEstados = {
     'ac': 'Acre',
     'al': 'Alagoas',
@@ -60,7 +60,7 @@ function configuraResultado() {
 }
 
 function validaForm(event) {
-    resultado.style.display = 'block';
+    resultado.classList.remove('is-hidden');
     configuraResultado();
 }
 
@@ -69,7 +69,7 @@ function limpaTudo() {
     for (let i = 0; i < spans.length; i +=1) {
         spans[i].innerHTML  = '';
     }
-    resultado.style.display = 'none';
+    resultado.classList.add('is-hidden');
 }
 
 window.onload = function () {

@@ -1,5 +1,4 @@
 const form = document.forms['formuser'];
-const msg = document.querySelector('.data-error');
 const btnEnviar = document.getElementById('btEnviar');
 const btnReset = document.getElementById('btResetar');
 const cData = document.getElementById('cData');
@@ -44,10 +43,6 @@ function setEstado() {
     }
 }
 
-function mensagemDeErro() {
-    msg.innerText = 'Data inválida! Digite a data corretamente.'
-}
-
 function configuraResultado() {
     [...form.elements].forEach(campo => {
         if (['text', 'select-one', 'textarea'].indexOf(campo.type) > -1) {
@@ -59,9 +54,11 @@ function configuraResultado() {
     });
 }
 
-function validaForm(event) {
-    resultado.classList.remove('is-hidden');
-    configuraResultado();
+function validaForm() {
+    if (validation.isValid()) {
+        resultado.classList.remove('is-hidden');
+        configuraResultado();
+    }
 }
 
 function limpaTudo() {
@@ -78,7 +75,7 @@ window.onload = function () {
         format: 'dd/mm/yyyy',
     });
     validation.init('#myForm', {
-        events: ['change', 'keyup', 'paste'],
+        events: ['submit', 'change', 'keyup', 'paste'],
     });
     btnEnviar.addEventListener('click', validaForm);
     form.addEventListener('submit', (e) => {

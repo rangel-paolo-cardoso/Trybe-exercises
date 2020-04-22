@@ -1,7 +1,7 @@
 #pond {
-    display: flex;
+  display: flex;
 }
 
 .red {
-    order: -1;
+  order: -1;
 }

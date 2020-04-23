@@ -1,5 +1,113 @@
+@charset "utf-8";
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+/* Formatação do container da página */
 .corpo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Formatação do cabeçalho */
+.cabecalho {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.titulo {
+  margin-top: 90px;
+}
+
+/* Formatação da nav */
+.bar-options {
+  border: 1px dashed black;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  width: 60%;
+}
+
+.indice {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.indice a {
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  font-size: 2.5vh;
+  justify-content: center;
+  height: 50%;
+  margin: 4px;
+  padding: 11px;
+  text-decoration: none;
+  transition: background-color 1s;
+  width: 20%;
+}
+
+.indice a:hover {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+}
+
+/* .indice li a {
+  color: black;
+  text-decoration: none;
+} */
+
+/* Formatação do conteúdo principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sessão de apresentação */
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container da foto e informaçôes */
+.sinopse {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Tag âncora que envolve a foto */
+.fotografia {
+  width: 40%;
+}
+
+.foto {
+  width: 100%;
+}
+
+.description {
+  margin: 0;
+  width: 60%;
+}
+
+/* Sessão de habilidades */
+.habs , .portfolio , .favorito {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

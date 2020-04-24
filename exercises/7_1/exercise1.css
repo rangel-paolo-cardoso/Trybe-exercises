@@ -36,5 +36,28 @@ figure {
 @media screen and (min-width: 501px) {
   body {
     background: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 16pt;
+    margin: 60px;
+  }
+
+  h1 {
+    font-size: 25pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  figure {
+    flex-basis: 35%;
   }
 }

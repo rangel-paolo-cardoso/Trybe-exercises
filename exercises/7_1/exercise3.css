@@ -92,8 +92,33 @@
   }
 }
 
-@media screen and (max-width: 240px) {
+@media screen and (min-width: 240px) and (max-width: 360px) {
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
   #aside {
     display: none;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  img {
+    width: 90%;
+  }
+
+  #navigation ul {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navigation ul li a {
+    border: none;
+    font-weight: 700;
   }
 }

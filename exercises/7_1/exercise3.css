@@ -99,6 +99,11 @@
     width: 100%;
   }
 
+  #header {
+    position: fixed;
+    width: 100%;
+  }
+
   #aside {
     display: none;
   }
@@ -109,6 +114,10 @@
 
   img {
     width: 90%;
+  }
+
+  #navigation {
+    margin-top: 80px;
   }
 
   #navigation ul {

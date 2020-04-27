@@ -36,13 +36,27 @@
                 height: 50px;
             }
 
-            @keyframes vaiVolta {
+            @keyframes vaiFica {
                 0% {
                     margin-left: 0;
                 }
 
                 100% {
                     margin-left: 93%;
+                }
+            }
+
+            @keyframes vaiVolta {
+                0% {
+                    margin-left: 0;
+                }
+
+                50% {
+                    margin-left: 100%;
+                }
+
+                100% {
+                    margin-left: 0%;
                 }
             }
         </style>
@@ -118,16 +132,21 @@
         <script>
             const div1 = document.getElementById('exercise-1');
             const div2 = document.getElementById('exercise-2');
+            const div3 = document.getElementById('exercise-3');
             window.onload = function () {
                 setTimeout(function () {
                     div1.style.animationDuration = '3s';
-                    div1.style.animationName = 'vaiVolta';
+                    div1.style.animationName = 'vaiFica';
                     div1.style.animationFillMode = 'forwards';
+
+                    div2.style.animationDuration = '2s';
+                    div2.style.animationName = 'vaiFica';
+                    div2.style.animationFillMode = 'forwards';
                 }, 1000);
                 setTimeout(function () {
-                    div2.style.animationDuration = '2s';
-                    div2.style.animationName = 'vaiVolta';
-                    div2.style.animationFillMode = 'forwards';
+                    div3.style.animationDuration = '1s';
+                    div3.style.animationName = 'vaiVolta';
+                    div3.style.animationDirection = 'alternate'
                 }, 1000);
             };
         </script>

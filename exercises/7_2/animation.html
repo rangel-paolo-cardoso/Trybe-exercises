@@ -36,6 +36,10 @@
                 height: 50px;
             }
 
+            #exercise-4:hover {
+                animation: vaiFica 5s;
+            }
+
             @keyframes vaiFica {
                 0% {
                     margin-left: 0;
@@ -133,6 +137,7 @@
             const div1 = document.getElementById('exercise-1');
             const div2 = document.getElementById('exercise-2');
             const div3 = document.getElementById('exercise-3');
+            const div4 = document.getElementById('exercise-4');
             window.onload = function () {
                 setTimeout(function () {
                     div1.style.animationDuration = '3s';
@@ -142,12 +147,15 @@
                     div2.style.animationDuration = '2s';
                     div2.style.animationName = 'vaiFica';
                     div2.style.animationFillMode = 'forwards';
-                }, 1000);
-                setTimeout(function () {
+
                     div3.style.animationDuration = '1s';
                     div3.style.animationName = 'vaiVolta';
-                    div3.style.animationDirection = 'alternate'
+                    div3.style.animationDirection = 'alternate';
+                
                 }, 1000);
+                // setTimeout(function () {
+                    
+                // }, 1000);
             };
         </script>
     </body>

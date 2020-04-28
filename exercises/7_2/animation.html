@@ -36,12 +36,27 @@
                 height: 50px;
             }
 
-            #exercise-4:hover {
+            #exercise-4 {
                 animation: vaiFica 5s;
+                animation-play-state: paused;
+                background: url('https://cdn.pixabay.com/photo/2012/01/09/09/10/sun-11582_960_720.jpg') 50%;
+            }
+
+            #exercise-4:hover {
+                animation-play-state: running;
             }
 
             #section-5:hover {
                 animation: tabsIn 5s forwards;
+            }
+
+            #exercise-6 {
+                background: url('https://cdn.pixabay.com/photo/2014/01/28/08/49/meadow-253616_960_720.jpg');
+            }
+
+            #exercise-6-square {
+                background: url('https://cdn.pixabay.com/photo/2014/06/25/06/33/light-bulb-376926_960_720.jpg');
+                background-size: cover;
             }
 
             #exercise-6-square:hover + div {
@@ -299,10 +314,12 @@
                     div1.style.animationDuration = '3s';
                     div1.style.animationName = 'vaiFica';
                     div1.style.animationFillMode = 'forwards';
+                    div1.style.background = 'url(https://cdn.pixabay.com/photo/2014/01/28/08/49/meadow-253616_960_720.jpg) 50%';
 
                     div2.style.animationDuration = '2s';
                     div2.style.animationName = 'vaiFica';
                     div2.style.animationFillMode = 'forwards';
+                    div2.style.background = 'url(https://cdn.pixabay.com/photo/2014/01/28/08/49/meadow-253616_960_720.jpg) 50%';
 
                     div3.style.animationDuration = '1s';
                     div3.style.animationName = 'vaiVolta';
@@ -311,6 +328,7 @@
                     div7.style.animationDuration = '10s';
                     div7.style.animationName = 'growthing';
                     div7.style.animationIterationCount = 'infinite';
+                    div7.style.background = 'url(https://cdn.pixabay.com/photo/2018/06/13/18/20/wave-3473335_960_720.jpg) 50%';
 
                     div8.style.animationDuration = '4s';
                     div8.style.animationName = 'alrCor';

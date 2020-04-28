@@ -111,6 +111,24 @@
                     background: yellow;
                 }
             }
+
+            @keyframes alr4Cor {
+                0% {
+                    background: red;
+                }
+
+                25% {
+                    background: yellow;
+                }
+
+                50% {
+                    background: blue;
+                }
+
+                75% {
+                    background: green;
+                }
+            }
         </style>
     </head>
     <body>
@@ -188,6 +206,7 @@
             // const div4 = document.getElementById('exercise-4');
             const div7 = document.getElementById('exercise-7');
             const div8 = document.getElementById('exercise-8');
+            const div9 = document.getElementById('exercise-9');
             window.onload = function () {
                 setTimeout(function () {
                     div1.style.animationDuration = '3s';
@@ -204,10 +223,15 @@
 
                     div7.style.animationDuration = '10s';
                     div7.style.animationName = 'growthing';
-                    div7.style.webkitAnimationIterationCount = 'infinite';
+                    div7.style.animationIterationCount = 'infinite';
 
                     div8.style.animationDuration = '4s';
                     div8.style.animationName = 'alrCor';
+
+                    div9.style.animationDuration = '4s';
+                    div9.style.animationName = 'alr4Cor';
+                    div9.style.animationIterationCount = 'infinite';
+                    div9.style.animationDirection = 'alternate';
                 }, 1000);
                 // setTimeout(function () {
                 // }, 1000);

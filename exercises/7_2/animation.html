@@ -48,6 +48,44 @@
                 animation: dirTabs 5s;
             }
 
+            #exercise-11_1,
+            #exercise-11_2,
+            #exercise-11_3,
+            #exercise-11_4,
+            #exercise-11_5 {
+                animation: corre 2s 3s infinite alternate;
+            }
+
+            #exercise-11_1 {
+                animation-timing-function: linear;
+            }
+
+            #exercise-11_2 {
+                animation-timing-function: ease;
+            }
+
+            #exercise-11_3 {
+                animation-timing-function: ease-in;
+            }
+
+            #exercise-11_4 {
+                animation-timing-function: ease-out;
+            }
+
+            #exercise-11_5 {
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes corre {
+                0% {
+                    margin-left: 0%;
+                }
+
+                100% {
+                    margin-left: 97%;
+                }
+            }
+
             @keyframes vaiFica {
                 0% {
                     margin-left: 0;
@@ -228,6 +266,13 @@
             const div8 = document.getElementById('exercise-8');
             const div9 = document.getElementById('exercise-9');
             const div10 = document.getElementById('exercise-10');
+            const ex11 = document.querySelectorAll('.flex-direction__column div');
+            
+            const div111 = document.getElementById('exercise-11_1');
+            const div112 = document.getElementById('exercise-11_2');
+            const div113 = document.getElementById('exercise-11_3');
+            const div114 = document.getElementById('exercise-11_4');
+            const div115 = document.getElementById('exercise-11_5');
             window.onload = function () {
                 setTimeout(function () {
                     div1.style.animationDuration = '3s';
@@ -259,8 +304,10 @@
                     div10.style.animationIterationCount = 'infinite';
                     div10.style.animationDirection = 'alternate';
                 }, 1000);
-                // setTimeout(function () {
-                // }, 1000);
+
+                setTimeout(function () {
+                    
+                }, 2000);
             };
         </script>
     </body>

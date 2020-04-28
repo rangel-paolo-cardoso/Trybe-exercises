@@ -76,6 +76,27 @@
                 animation-timing-function: ease-in-out;
             }
 
+            #exercise-12 {
+                animation-duration: 1s;
+                animation-name: sumir;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+                animation-play-state: paused;
+            }
+
+            #exercise-12:active {
+                animation-play-state: running;
+            }
+
+            @keyframes sumir {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
             @keyframes corre {
                 0% {
                     margin-left: 0%;

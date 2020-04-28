@@ -129,6 +129,26 @@
                     background: green;
                 }
             }
+
+            @keyframes growCAlt {
+                0% {
+                    background: red;
+                    transform: scale(1);
+                }
+
+                25% {
+                    background: yellow;
+                }
+
+                50% {
+                    background: blue;
+                }
+
+                75% {
+                    background: green;
+                    width: 100%;
+                }
+            }
         </style>
     </head>
     <body>
@@ -207,6 +227,7 @@
             const div7 = document.getElementById('exercise-7');
             const div8 = document.getElementById('exercise-8');
             const div9 = document.getElementById('exercise-9');
+            const div10 = document.getElementById('exercise-10');
             window.onload = function () {
                 setTimeout(function () {
                     div1.style.animationDuration = '3s';
@@ -232,6 +253,11 @@
                     div9.style.animationName = 'alr4Cor';
                     div9.style.animationIterationCount = 'infinite';
                     div9.style.animationDirection = 'alternate';
+
+                    div10.style.animationDuration = '10s';
+                    div10.style.animationName = 'growCAlt';
+                    div10.style.animationIterationCount = 'infinite';
+                    div10.style.animationDirection = 'alternate';
                 }, 1000);
                 // setTimeout(function () {
                 // }, 1000);

@@ -1,0 +1,16 @@
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-cartas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    margin: 10px 20px;
+    width: 200px;
+}

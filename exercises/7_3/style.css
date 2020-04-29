@@ -1,6 +1,6 @@
 body {
-    background: url('https://cdn.pixabay.com/photo/2015/05/15/13/32/background-768349_960_720.jpg');
-    background-size: cover;
+    background: url('https://image.freepik.com/foto-gratis/fichas-casino-dados-mesa-verde_23-2147881287.jpg') repeat-y;
+    background-size: 100%;
 }
 
 .container {
@@ -53,4 +53,3 @@ img:hover {
 .rotate3D:hover {
     transform: rotate3d(1, 1, 1, 200deg);
 }
-

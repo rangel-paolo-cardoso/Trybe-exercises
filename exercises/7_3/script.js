@@ -5,7 +5,8 @@ const efeitos = [
     'rotateRight',
     'rotateX',
     'rotateY',
-    'translateIt'
+    'translateIt',
+    'rotate3D'
 ]; // Vetor de efeitos.
 const cartas = [
     'cartas/cinco-de-ouros.png',

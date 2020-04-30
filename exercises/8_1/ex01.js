@@ -1,15 +1,3 @@
-const fat = (num1) => {
-  let str = '';
-  let res = 1;
-  for (let i = num1; i >= 1; i -= 1) {
-    res *= i;
-    if (i === 1) {
-      str += `${i}`;
-      break;
-    }
-    str += `${i} * `;
-  }
-  return `${num1}! = ${str} = ${res}`;
-}
+const fat = (n) => (n === 0)? 1 : n * fat(n-1);
 
 console.log(fat(5));

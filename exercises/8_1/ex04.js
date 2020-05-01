@@ -6,12 +6,13 @@ const habs = [
   'Matemática'
 ];
 
+const myHabs = str => {
+  return `${str} \nMinhas cinco habilidades são: \n${habs.sort().join(', \n')} \n#goTrybe`;
+};
+
 const replaceStr = str => {
-  let frase = 
-`Tryber x aqui!
-Tudo bem?`;
-  frase = frase.replace('x', str);
-  return frase;
+  const frase = 'Tryber x aqui! \nTudo bem?';
+  return myHabs(frase.replace('x', str));
 };
 
 const txt = 'Rangel';

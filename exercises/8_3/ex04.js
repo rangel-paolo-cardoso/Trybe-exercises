@@ -11,4 +11,5 @@ function myRemove(arr, item) {
 }
 
 assert.deepEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 4]);
+assert.notDeepEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 3, 4]);
 // console.log(myRemove([1, 2, 3, 4], 3));

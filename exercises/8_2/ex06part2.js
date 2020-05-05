@@ -22,10 +22,9 @@ const allLesson = Object.assign({}, {lesson1, lesson2, lesson3});
 
 const numStudents = () => { // Retorna quantidade de alunos de todos OBJS.
   const keys = Object.keys(allLesson); 
-  const number = 'numeroEstudantes';
   let qtd = 0;
   for (lesson of keys) {
-    qtd += allLesson[lesson][number];
+    qtd += allLesson[lesson]['numeroEstudantes'];
   }
   return `Quantidade total de estudantes: ${qtd}`;
 };

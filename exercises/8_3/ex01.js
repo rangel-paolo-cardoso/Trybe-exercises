@@ -10,3 +10,5 @@ function sum(a, b) {
 
 assert.equal(sum(4, 5), 9);
 assert.equal(sum(0, 0), 0);
+assert.equal(sum(4, "5"), 9);
+// assert.throws(() => {sum(4, "5")}, /^Error: parameters must be numbers 0$/);

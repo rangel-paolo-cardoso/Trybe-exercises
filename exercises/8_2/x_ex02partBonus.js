@@ -22,7 +22,7 @@ const allLesson = Object.assign({}, {lesson1, lesson2, lesson3});
 
 const creatViewClass = (obj, teacher) => { // Gera relatório do Professor.
   let report = {professor: teacher, aulas: [], estudantes: 0};
-  for (let lesson of Object.keys(obj)) {
+  for (let lesson in obj) {
     if (obj[lesson]['professor'] === teacher) {
       report.aulas.push(obj[lesson].materia);
       report.estudantes += obj[lesson].numeroEstudantes;

@@ -22,7 +22,7 @@ const allLesson = Object.assign({}, {lesson1, lesson2, lesson3});
 
 const countWatch = (obj) => { // Conta quantidade alunos viram aulas matemática.
   let alunos = 0;
-  for (let lesson of Object.keys(obj)) {
+  for (let lesson in obj) {
     if (obj[lesson]['materia'] === 'Matemática')
       alunos += obj[lesson]['numeroEstudantes'];
   }

@@ -20,9 +20,7 @@ const lesson3 = {
 // Objeto com os 3 lessons dentro, atrubuído a allLessons.
 const allLesson = Object.assign({}, {lesson1, lesson2, lesson3});
 
-const valueByPos = (obj, num) => { // Retorna valor com base na posição da chave.
-  const vet = Object.keys(obj)[num];
-  return `Output: ${obj[vet]}`;
-};
+// Retorna valor com base na posição da chave.
+const valueByPos = (obj, num) => `Output: ${obj[Object.keys(obj)[num]]}`;
 
 console.log(valueByPos(lesson1, 0));

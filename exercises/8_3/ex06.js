@@ -12,3 +12,4 @@ assert.equal(myFizzBuzz(15), 'fizzbuzz');
 assert.equal(myFizzBuzz(9), 'fizz');
 assert.equal(myFizzBuzz(10), 'buzz');
 assert.equal(myFizzBuzz(11), 11);
+assert.equal(myFizzBuzz('test'), false);

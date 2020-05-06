@@ -9,3 +9,4 @@ function myFizzBuzz(num) {
 }
 
 assert.equal(myFizzBuzz(15), 'fizzbuzz');
+assert.equal(myFizzBuzz(9), 'fizz');

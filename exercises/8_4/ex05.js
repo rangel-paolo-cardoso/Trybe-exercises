@@ -13,6 +13,7 @@ const parameter = ['Irina', 'Ashleigh', 'Elsa'];
 const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
 const output = greetPeople(parameter);
 
+assert.strictEqual(typeof greetPeople, 'function');
 assert.deepStrictEqual(output, result);
 /*
   Use a variável parameter como parâmetro da função acima, escreva testes

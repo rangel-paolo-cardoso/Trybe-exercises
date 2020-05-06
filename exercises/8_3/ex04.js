@@ -9,7 +9,8 @@ function myRemove(arr, item) {
   }
   return newArr;
 }
-
+const myArray = [1, 2, 3, 4];
 assert.deepEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 4]);
 assert.notDeepEqual(myRemove([1, 2, 3, 4], 3), [1, 2, 3, 4]);
+assert.deepEqual(myArray, [1, 2, 3, 4]);
 // console.log(myRemove([1, 2, 3, 4], 3));

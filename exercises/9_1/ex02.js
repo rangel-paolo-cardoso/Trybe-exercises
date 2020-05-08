@@ -63,7 +63,7 @@ const books = [
   },
 ];
 
-function smallerName() {
+const smallerName = () => {
   let nameBook;
   let minLength = books[0].name.length;
   books.forEach(book => {
@@ -73,6 +73,6 @@ function smallerName() {
     }
   });
   return nameBook;
-}
+};
 
 assert.equal(smallerName(), 'Duna');

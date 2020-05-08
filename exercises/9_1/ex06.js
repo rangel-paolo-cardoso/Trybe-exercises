@@ -65,8 +65,6 @@ const books = [
 
 const expected_result = false
 
-function everyoneWasBornOnSecXX() {
-  return books.every(person => person.author.birthYear >= 1900);
-}
+const everyoneWasBornOnSecXX = () => books.every(person => person.author.birthYear >= 1900);
 
 assert.equal(everyoneWasBornOnSecXX(), expected_result);

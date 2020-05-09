@@ -64,15 +64,9 @@ const books = [
 ];
 
 const smallerName = () => {
-  let nameBook;
-  let minLength = books[0].name.length;
-  books.forEach(book => {
-    if (book.name.length < minLength) {
-      minLength = book.name.length;
-      nameBook = book.name;
-    }
-  });
-  return nameBook;
+  let mLen = books[0].name;
+  books.forEach(book => mLen = (book.name.length < mLen.length)? book.name : mLen);
+  return mLen;
 };
 
 assert.equal(smallerName(), 'Duna');

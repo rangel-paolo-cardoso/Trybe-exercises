@@ -90,6 +90,6 @@ const expected_result = [
   }
 ];
 
-const nameAndAge = () => books.map(b => Object.assign({}, {age: `${b.releaseYear - b.author.birthYear}`, author: `${b.author.name}`})).sort((a, b) => a.age - b.age);
+const nameAndAge = () => books.map(b => ({age: `${b.releaseYear - b.author.birthYear}`, author: `${b.author.name}`})).sort((a, b) => a.age - b.age);
 
 assert.deepEqual(nameAndAge(), expected_result);

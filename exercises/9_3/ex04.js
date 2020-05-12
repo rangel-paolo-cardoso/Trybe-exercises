@@ -31,14 +31,14 @@ const people = [
 const filterPeople = (arr) => arr.filter(({bornIn, nationality}) => bornIn < 2000 && nationality === 'Australian');
 
 const filteredPeople = filterPeople(people);
-console.log(filteredPeople);
-// assert.deepEqual(filteredPeople[0], {
-//   name: "Nicole",
-//   bornIn: 1992,
-//   nationality: "Australian",
-// });
-// assert.deepEqual(filteredPeople[1], {
-//   name: "Toby",
-//   bornIn: 1901,
-//   nationality: "Australian",
-// });
+
+assert.deepEqual(filteredPeople[0], {
+  name: "Nicole",
+  bornIn: 1992,
+  nationality: "Australian",
+});
+assert.deepEqual(filteredPeople[1], {
+  name: "Toby",
+  bornIn: 1901,
+  nationality: "Australian",
+});

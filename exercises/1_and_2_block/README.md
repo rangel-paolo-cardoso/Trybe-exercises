@@ -1,3 +1,4 @@
+#Exercícios de Shell Script
 Este arquivo descreve a função de cada arquivo sh disponível neste repositório.
 
 -ex01.sh: imprime uma mensagem na tela com a frase "Shell Script é demais!".

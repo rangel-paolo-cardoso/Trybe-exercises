@@ -1,7 +1,3 @@
-const mySum = (arr) => {
-  let result = 0;
-  arr.forEach(item => result += item);
-  return result;
-};
+const mySum = (arr) => arr.reduce((r, i) => r + i, 0);
 
 module.exports = mySum;

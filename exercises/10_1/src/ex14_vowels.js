@@ -1,10 +1,5 @@
 const vogais = ['a', 'e', 'i', 'o', 'u'];
 
-const vowels = (str) => {
-  return vogais.reduce((res, letra) => {
-    if (str.toLowerCase().includes(letra)) res += 1;
-    return res;
-  }, 0);
-};
-console.log(vowels('aeiou'));
+const vowels = (str) => vogais.reduce((res, letra) => res += (str.toLowerCase().includes(letra)) ? 1: 0, 0);
+
 module.exports = vowels;

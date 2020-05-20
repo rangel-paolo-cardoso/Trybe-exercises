@@ -30,7 +30,7 @@ const lookup = (login, property) => {
   const pers = users.find(e => e.login === login);
   if (!pers) throw new Error('Could not find user');
   if (!pers[property]) throw new Error('Could not find property');
-  return users.find(e => e.login === login)[property];
+  return pers[property];
 };
 
 module.exports = lookup;

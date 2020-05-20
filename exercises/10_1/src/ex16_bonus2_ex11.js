@@ -1,8 +1,4 @@
-const setPrice = (item, price) => {
-  const retorno = Object.assign({}, item);
-  retorno.price = price;
-  return retorno;
-};
+const setPrice = ({ name }, price) => ({ name, price });
 
 // addToCart(cart: Array, item: Object) => cart: Array
 const addToCart = (cart, item) => [item];

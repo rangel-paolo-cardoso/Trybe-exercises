@@ -4,6 +4,5 @@ const myRemoveWithoutCopy = (arr, item) => {
   });
   return arr;
 };
-let a  = [1, 2, 3, 4]
-console.log(myRemoveWithoutCopy(a, 5));
+
 module.exports = myRemoveWithoutCopy;

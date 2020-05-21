@@ -1,8 +1,8 @@
 const resp = document.getElementById('resp');
 
-const fazAlgo = algo => resp.innerHTML = `O valor dobrado: ${algo * 2}`;
+const fazAlgo = algo => resp.innerHTML = [2, 3, 5, 10].map(r => algo / r);
 
-const errinho = err => resp.innerHTML = `${err}`; // menssagem de erro.
+const errinho = err => console.log(err); // menssagem de erro.
 
 const random = () => parseInt(Math.random() * 50); // Aleatório de 1 a 50.
 
@@ -12,12 +12,11 @@ const geraArray = () => elevaNum([...Array(10)].map(i => random()));
 
 const myPromise = new Promise((resolve, reject) => {
   const sum = geraArray().reduce((r, i) => r + i, 0);
-  if (sum < 8000) return resolve(sum);
-  return reject('Erro: O resultado é mais de 8000.');
+  return (sum < 8000) ? resolve(sum): reject('É mais de oito mil! Essa promise deve estar quebrada!');
 });
 
-const exec = () => {
-  myPromise
+const exec = async () => {
+  await myPromise
     .then(val => fazAlgo(val))
     .catch(e => errinho(e));
 };

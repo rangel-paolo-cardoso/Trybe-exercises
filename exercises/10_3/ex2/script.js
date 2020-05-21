@@ -1,30 +1,24 @@
-const fazAlgo = algo => console.log(algo * 2);
+const fazAlgo = algo => console.log(`O dobro do valor: ${algo * 2}`);
 
-const errinho = () => console.log('Um pequeno erro ocorreu!');
+const errinho = err => console.log(`${err}`);
 
-const random = () => parseInt(Math.random() * 50);
+const random = () => parseInt(Math.random() * 50); // Aleatório de 1 a 50.
 
-const elevaNum = arr => arr.map(i => i * i);
+const elevaNum = arr => arr.map(i => i * i); // Eleva ao quadrado.
 
-const geraArray = () => {
-  let array = [];
-  for (let i = 0; i < 10; i += 1) {
-    array[i] = random();
-  }
-  return elevaNum(array);
-};
+const geraArray = () => elevaNum([...Array(10)].map(i => random()));
 
 const myPromise = new Promise((resolve, reject) => {
   const arr = geraArray();
   const sum = arr.reduce((r, i) => r + i, 0);
   if (sum < 8000) return resolve(sum);
-  return reject('O resultado é mais de 8000.');
+  return reject('Erro: O resultado é mais de 8000.');
 });
 
 const exec = () => {
   myPromise
-    .then(fazAlgo)
-    .catch(errinho);
+    .then(val => fazAlgo(val))
+    .catch(e => errinho(e));
 };
 
 exec();

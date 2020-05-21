@@ -1,6 +1,8 @@
-const fazAlgo = algo => console.log(`O dobro do valor: ${algo * 2}`);
+const resp = document.getElementById('resp');
 
-const errinho = err => console.log(`${err}`);
+const fazAlgo = algo => resp.innerHTML = `O valor dobrado: ${algo * 2}`;
+
+const errinho = err => resp.innerHTML = `${err}`; // menssagem de erro.
 
 const random = () => parseInt(Math.random() * 50); // Aleatório de 1 a 50.
 

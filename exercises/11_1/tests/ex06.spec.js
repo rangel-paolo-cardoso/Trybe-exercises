@@ -12,7 +12,16 @@ const findAnimalByName = (name) => (
   })
 )
 
-const getAnimal = (name) => findAnimalByName(name);
+const findAnimalByAge = (name) => (
+  new Promise((resolve, reject) => {
+    const animal = Animals.find(a => a.age === name);
+    if (animal) return resolve(animal);
+    return reject(Animals);
+  })
+)
+
+const getAnimal = (name) =>
+  ((typeof name !== 'number') ? findAnimalByName(name) : findAnimalByAge(name));
 // ---------------------
 
 describe('Testando promise - findAnimalByName', () => {
@@ -30,6 +39,24 @@ describe('Testando promise - findAnimalByName', () => {
       expect.assertions(1);
       return getAnimal('Bob').catch(error =>
         expect(error).toEqual('Nenhum animal com esse nome!')
+      );
+    });
+  });
+
+  describe('Quando existe o animal com a idade procurada', () => {
+    test('Retorne o objeto do animal', () => {
+      expect.assertions(1);
+      return getAnimal(5).then(animal => {
+        expect(animal).toEqual({ name: 'Preguiça', age: 5, type: 'Cat' });
+      });
+    });
+  });
+
+  describe('Quando não existe o animal com a idade procurada', () => {
+    test('Retorna um array de animais', () => {
+      expect.assertions(1);
+      return getAnimal(15).catch(error =>
+        expect(error).toEqual(Animals)
       );
     });
   });

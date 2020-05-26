@@ -3,10 +3,9 @@ const uppercase = (str, callback) => {
 }
 
 describe('Teste de Callback', () => {
-  test('Verifica se o retorna é em UpperCase', () => {
+  test('Verifica se o retorno é em UpperCase', () => {
     uppercase('Rangel', (arg) => {
       expect(arg).toBe('RANGEL');
-      // done();
     });
   });
 });

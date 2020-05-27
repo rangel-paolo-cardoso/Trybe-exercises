@@ -70,14 +70,3 @@ describe('Mockagem de 3 funções de uma vez', () => {
     expect(exs4.conca).toHaveBeenCalledWith('Rangel', 'Paolo', 'Cardoso');
   });
 });
-
-// Exercício 5.
-const exs5 = require('../exercises/ex01_4');
-
-describe('Mockagem de 3 funções de uma vez', () => {
-  test('Teste de restauração de implementation', () => {
-    exs5
-    expect(exs5.toUpper('Rangel')).toBe('rangel');
-    // exs4.toUpper.mockReset();
-  });
-});

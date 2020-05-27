@@ -19,4 +19,25 @@ describe('Realizando Mocks', () => {
     expect(exs.randNum).toHaveBeenCalled();
     expect(exs.randNum).toHaveBeenCalledTimes(1);
   });
+
+  test('Teste de mock implementation multiplicando', () => {
+    exs.randNum.mockReset();
+    exs.randNum.mockImplementation((a, b, c) => a * b * c);
+
+    expect(exs.randNum(20, 2, 4)).toBe(160);
+    expect(exs.randNum(2, 2, 2)).toBe(8);
+    expect(exs.randNum(5, 5, 5)).toBe(125);
+    expect(exs.randNum).toHaveBeenCalled();
+    expect(exs.randNum).toHaveBeenCalledTimes(3);
+
+    exs.randNum.mockReset();
+    exs.randNum.mockImplementation(n => 2 * n);
+
+    expect(exs.randNum(20)).toBe(40);
+    expect(exs.randNum(2)).toBe(4);
+    expect(exs.randNum).toHaveBeenCalled();
+    expect(exs.randNum).toHaveBeenCalledWith(20);
+    expect(exs.randNum).toHaveBeenCalledWith(2);
+    expect(exs.randNum).toHaveBeenCalledTimes(2);
+  });
 });

@@ -7,7 +7,7 @@ class Pokemon extends React.Component {
       image
     } = this.props.pokemon;
     return (
-      <div>
+      <div className="pokemon">
         <h1>Nome: {name}</h1>
         <p>Tipo: {type}</p>
         <p>Peso médio: {value} {measurementUnit}</p>

@@ -1,0 +1,43 @@
+.page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.poke-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokedex {
+  background-color: dodgerblue;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+}
+
+.pokemon {
+  background-color: deepskyblue;
+  border: 1px solid black;
+  border-radius: 10px;
+  /* flex-grow: 3; */
+  margin: 7px;
+  padding: 10px;
+}
+
+/* .pokemon:last-child {
+  flex-grow: 5;
+} */
+
+.pokemon:hover {
+  background-color: white;
+  transform: scale(1.1);
+  transition: background-color 0.5s, transform 1s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}

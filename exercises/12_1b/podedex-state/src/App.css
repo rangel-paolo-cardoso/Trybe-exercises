@@ -12,8 +12,8 @@
 
 .pokedex {
   background-color: dodgerblue;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   justify-content: space-around;
 }
 
@@ -21,14 +21,14 @@
   background-color: deepskyblue;
   border: 1px solid black;
   border-radius: 10px;
-  flex-grow: 3;
+  /* flex-grow: 3; */
   margin: 7px;
   padding: 10px;
 }
 
-.pokemon:last-child {
+/* .pokemon:last-child {
   flex-grow: 5;
-}
+} */
 
 .pokemon:hover {
   background-color: white;

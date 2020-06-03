@@ -11,7 +11,7 @@ class Pokemon extends React.Component {
         <h1>Nome: {name}</h1>
         <p>Tipo: {type}</p>
         <p>Peso médio: {value} {measurementUnit}</p>
-        <img src={image} />
+        <img src={image} alt={name} />
       </div>
     );
   }

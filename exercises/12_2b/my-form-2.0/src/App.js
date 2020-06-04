@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Form from './componentes/Form';
+import TelaForm from './componentes/TelaForm';
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <TelaForm />
     </div>
   );
 }

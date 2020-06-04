@@ -24,7 +24,9 @@ class Form extends Component {
             value={this.state.name} onChange={this.toUpper} required />
           </label>
           <label>Email:
-            <input type="text" maxLength="50" required />
+            <input type="text" maxLength="50" 
+            pattern="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
+            required />
           </label>
           <label>CPF:
             <input type="text" maxLength="11" required />

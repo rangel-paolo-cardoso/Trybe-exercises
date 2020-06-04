@@ -6,23 +6,29 @@ class Form extends Component {
     super(props);
     this.state = {
       name: '',
-      cidade: ''
+      cidade: '',
+      alerta: 1,
     };
-    this.toUpper = this.toUpper.bind(this);
-    this.verifyCity = this.verifyCity.bind(this);
   }
 
-  toUpper = (e) => {
+  toUpper = (e) => { // Transforma nome em UPPERCASE.
     this.setState(({ name: e.target.value.toUpperCase() }));
   };
 
-  setCity = (e) => {
+  setCity = (e) => { // Configura campo cidade.
     this.setState(({ cidade: e.target.value }));
   };
 
   verifyCity = (e) => { // Apaga o campo cidade se começar com número.
     const city = parseInt(e.target.value.trim().split('')[0]);
     if (!isNaN(city)) this.setState(({ cidade: '' }));
+  };
+
+  alertInField = () => {
+    if (this.state.alerta === 1) {
+      alert('Preencha com cuidado esta informação');
+      this.setState({ alerta: 0 });
+    }
   };
 
   render() {
@@ -75,7 +81,8 @@ class Form extends Component {
           </label>
           <label>
             Cargo:
-            <textarea name="cargo" maxLength="40" required></textarea>
+            <textarea name="cargo" maxLength="40"
+            onMouseEnter={this.alertInField} required></textarea>
           </label>
           <label>
             Descrição do cargo:

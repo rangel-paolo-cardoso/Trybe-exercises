@@ -4,9 +4,15 @@ import data from './data';
 class Form extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: ''
+    };
+    this.toUpper = this.toUpper.bind(this);
   }
 
-  
+  toUpper = (e) => {
+    this.setState(({ name: e.target.value.toUpperCase() }));
+  };
 
   render() {
     return (
@@ -14,7 +20,8 @@ class Form extends Component {
         <fieldset className="dados-pessoais">
           <legend>Dados Pessoais</legend>
           <label>Nome:
-            <input type="text" maxLength="40" required />
+            <input type="text" maxLength="40" 
+            value={this.state.name} onChange={this.toUpper} required />
           </label>
           <label>Email:
             <input type="text" maxLength="50" required />

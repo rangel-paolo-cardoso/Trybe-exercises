@@ -5,13 +5,24 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      cidade: ''
     };
     this.toUpper = this.toUpper.bind(this);
+    this.verifyCity = this.verifyCity.bind(this);
   }
 
   toUpper = (e) => {
     this.setState(({ name: e.target.value.toUpperCase() }));
+  };
+
+  setCity = (e) => {
+    this.setState(({ cidade: e.target.value }));
+  };
+
+  verifyCity = (e) => { // Apaga o campo cidade se começar com número.
+    const city = parseInt(e.target.value.trim().split('')[0]);
+    if (!isNaN(city)) this.setState(({ cidade: '' }));
   };
 
   render() {
@@ -32,10 +43,12 @@ class Form extends Component {
             <input type="text" maxLength="11" required />
           </label>
           <label>Endereço:
-            <input type="text" maxLength="200" required />
+            <input type="text" maxLength="200"
+            pattern="^([a-zA-Z]|[0-9]|[ ])+$" required />
           </label>
           <label>Cidade:
-            <input type="text" maxLength="28" required />
+            <input type="text" maxLength="28" onChange={this.setCity}
+            value={this.state.cidade} onBlur={this.verifyCity} required />
           </label>
           <label>Estado:
             <select name="estado" required>

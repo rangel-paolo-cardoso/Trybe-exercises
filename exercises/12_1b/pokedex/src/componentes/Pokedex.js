@@ -16,32 +16,25 @@ class Pokedex extends React.Component {
   
   indexIncrement = () => {
     if (this.state.index < data.length - 1) {
-      this.setState({ index: this.state.index + 1 });
+      this.setState((state) => 
+        ({ index: state.index + 1 })
+      );
       // this.setState({ filterType: data[this.state.index] });
-      this.nexPok();
-      console.log(this.state.index);
-    }
-  }
-
-  indexDecrement = () => {
-    if (this.state.index > 0) {
-      this.setState({ index: this.state.index - 1 });
-      // this.setState({ filterType: data[this.state.index] });
-      this.nexPok();
-      console.log(this.state.index);
+      // this.nexPok();
     }
   }
 
   render () {
+    console.log(this.state.index);
+    console.log(data.length);
     return (
       <div className="poke-body">
         <h1>Pokedex</h1>
         <div>
-          <button onClick={this.indexDecrement}>Voltar</button>
           <button onClick={this.indexIncrement}>Avançar</button>
         </div>
         <div className="pokedex">
-          {<Pokemon pokemon={this.state.filterType} />}
+          {<Pokemon pokemon={data[this.state.index]} />}
         </div>
       </div>
     );

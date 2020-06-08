@@ -33,11 +33,13 @@ class App extends Component {
           value="Título Show"
         />
         {this.state.showModal && (
-          <Alert
-            hideComponent={this.changeShowComponent}
-            contentTitle="Modal"
-            content="Coloque qualquer coisa aqui."
-          />
+          <Alert>
+            {{
+              title: "Algum título",
+              content: "Algum conteúdo",
+              timeSEconds: 3,
+            }}
+          </Alert>
         )}
       </div>
     );
@@ -45,3 +47,6 @@ class App extends Component {
 }
 
 export default App;
+// hideComponent={this.changeShowComponent}
+// contentTitle="Modal"
+// content="Coloque qualquer coisa aqui."

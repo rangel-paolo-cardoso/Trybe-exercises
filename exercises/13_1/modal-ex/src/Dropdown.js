@@ -53,4 +53,8 @@ Dropdown.propTypes = {
   })
 }
 
+Dropdown.defaultProps = {
+  title: 'Listagem de elementos'
+}
+
 export default Dropdown;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import Alert from './Alert';
+import data from './data';
+import Dropdown from './Dropdown';
 
 class App extends Component {
   constructor(props) {
@@ -26,27 +26,12 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-        <Button
-          content="Clique aqui"
-          isDisable={this.state.isDisableButton}
-          showComponent={this.changeShowComponent}
-          value="Título Show"
-        />
-        {this.state.showModal && (
-          <Alert hideComponent={this.changeShowComponent}>
-            {{
-              title: "Algum título",
-              content: "Algum conteúdo",
-              timeSEconds: 3,
-            }}
-          </Alert>
-        )}
+        <Dropdown list={data} >
+          {{ title: 'Título de Teste' }}
+        </Dropdown>
       </div>
     );
   }
 }
 
 export default App;
-// hideComponent={this.changeShowComponent}
-// contentTitle="Modal"
-// content="Coloque qualquer coisa aqui."

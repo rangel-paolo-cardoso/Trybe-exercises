@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className="main">
         <Dropdown list={data} >
-          {{ title: 'Título de Teste' }}
+          {{ title: 'Lista de jogos da saga Resident Evil' }}
         </Dropdown>
       </div>
     );

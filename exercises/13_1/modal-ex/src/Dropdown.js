@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component } from 'react';
 import './Alert.css';
 
@@ -44,5 +45,12 @@ class Dropdown extends Component {
     );
   }
 };
+
+Dropdown.propTypes = {
+  children: PropTypes.any,
+  list: PropTypes.shape({
+    map: PropTypes.func
+  })
+}
 
 export default Dropdown;

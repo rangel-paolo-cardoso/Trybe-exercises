@@ -11,22 +11,30 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const { status } = this.state;
     await fetch('https://dog.ceo/api/breeds/image/random')
       .then((resp) => resp.json())
-      .then((dogImage) => (
+      .then((dogImage) => {
         this.setState({
+          status: dogImage.status,
           message: dogImage.message,
-          state: !status,
-        })
-      ));
-  }
+        });
+        localStorage.dogImage = dogImage.message;
+        alert(dogImage.message.split('/')[4]);
+      });
+  };
+
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if (nextState.message.includes('terrier')) return false;
+    return true;
+  };
 
   render() {
-    const { message } = this.state;
+    const { status, message } = this.state;
     return (
       <div>
-        { message ? <img src={message} alt="A dog"/> : <div>Loading...</div> }
+        { status ? <img src={message} alt="A dog" height="300" /> : <div>Loading...</div> }
+        <br/>
+        <button onClick={this.componentDidMount}>Show another dog</button>
       </div>
     );
   }

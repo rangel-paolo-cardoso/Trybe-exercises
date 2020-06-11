@@ -1,10 +1,10 @@
 // arquivo Users.js
 import React from 'react';
 
-const Users = ({ greetingMessage = 'Hi There' }) => (
+const Users = ({ greetingMessage, match: { params } }) => (
   <div>
     <h2> Users </h2>
-    <p> {greetingMessage}, this is my awesome Users component </p>
+    <p>{greetingMessage} user {params.id}, this is my awesome Users component </p>
   </div>
 );
 

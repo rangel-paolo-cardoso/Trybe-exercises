@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>índice</h1>
+      <h1 data-testid="main-title">Índice</h1>
       <NavBar />
       <Switch>
         <Route path="/portfolio" component={Portfolio} />

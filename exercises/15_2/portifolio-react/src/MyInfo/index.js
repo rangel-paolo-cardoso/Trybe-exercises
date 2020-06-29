@@ -15,7 +15,7 @@ class MyInfo extends Component {
             <span>Formação:</span> Análise e Desenvolvimento de Sistemas.
             <span>Nacionalidade:</span> brasileiro nativo.
             <span>O que faz:</span> estuda Desenvolvimento de Software na
-            <span> <a href="https://www.betrybe.com/" target="_blank">Trybe</a></span>.
+            <span> Trybe</span>.
           </p>
         </div>
       </div>

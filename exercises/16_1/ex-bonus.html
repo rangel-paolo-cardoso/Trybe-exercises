@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício Bônus</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>
+      Contador:
+      <span id="counter">0</span>
+    </div>
+
+    <input id="valInc" type="number">
+    <button onclick="increment()">Incremente</button>
+    <span id="incCounter">0</span>
+    <br />
+    <input id="valDec" type="number">
+    <button onclick="decrement()">Decremente</button>
+    <span id="decCounter">0</span>
+
+    <script>
+      const INCREMENT = 'INCREMENT';
+      const DECREMENT = 'DECREMENT';
+      const COUNTER = 'COUNTER';
+      const valInc = document.getElementById('valInc');
+      const valDec = document.getElementById('valDec');
+      const incCounter = document.getElementById('incCounter');
+      const decCounter = document.getElementById('decCounter');
+      const contador = document.getElementById('counter');
+
+      const countReducer = (state = [0, 0, 0, 0], action) => {
+        const val = action.value;
+        switch (action.type) {
+          case INCREMENT:
+            return [state[0] + 1, state[1] + 1, state[2], state[3] + val ];
+          case DECREMENT:
+            return [state[0] + 1, state[1], state[2] + 1, state[3] - val ];
+          default:
+            return state;
+        }
+      };
+
+      const store = Redux.createStore(countReducer);
+
+      const increment = () => {
+        store.dispatch({ type: INCREMENT, value: Number(valInc.value) });
+      };
+
+      const decrement = () => {
+        store.dispatch({ type: DECREMENT, value: Number(valDec.value) });
+      };
+
+      store.subscribe(() => {
+        contador.innerHTML = store.getState()[3];
+        incCounter.innerHTML = store.getState()[1];
+        decCounter.innerHTML = store.getState()[2];
+      });
+    </script>
+  </body>
+</html>

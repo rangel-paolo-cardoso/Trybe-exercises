@@ -1,0 +1,1 @@
+export const somaValor = value => ({ type: 'SOMA', value }); 

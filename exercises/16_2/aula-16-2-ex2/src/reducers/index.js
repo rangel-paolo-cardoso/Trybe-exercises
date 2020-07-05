@@ -1,13 +1,37 @@
+import { combineReducers } from 'redux';
 const INITIAL_VALUE = 0;
 
-const somatorioReducer = (state = INITIAL_VALUE, action) => {
-  console.log(state);
+const somaInputUmReducer = (state = INITIAL_VALUE, action) => {
   switch (action.type) {
-    case 'SOMA':
-      return state + Number(action.value);
+    case 'SOMA1':
+      return Number(action.value);
     default:
       return state;
   }
 };
 
-export default somatorioReducer;
+const somaInputDoisReducer = (state = INITIAL_VALUE, action) => {
+  switch (action.type) {
+    case 'SOMA2':
+      return Number(action.value);
+    default:
+      return state;
+  }
+};
+
+const somaInputTresReducer = (state = INITIAL_VALUE, action) => {
+  switch (action.type) {
+    case 'SOMA3':
+      return Number(action.value);
+    default:
+      return state;
+  }
+};
+
+const combineMyRedux = combineReducers({
+  somaInputUmReducer,
+  somaInputDoisReducer,
+  somaInputTresReducer,
+});
+
+export default combineMyRedux;

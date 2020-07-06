@@ -1,0 +1,1 @@
+export const ALGUMA_COISA = () => ({ type: });

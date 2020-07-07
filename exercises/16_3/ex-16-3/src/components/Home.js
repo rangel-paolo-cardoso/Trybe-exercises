@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div>
-    <Link to="/login">Logar</Link>
+    Bem-vindo ao sistema de cadastramento!
+    <Link to="/login">Faça seu Login</Link>
   </div>
 );
 

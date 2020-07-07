@@ -1,7 +1,12 @@
-export const CHANGE_TEXT = 'CHANGE_TEXT';
+export const ADD_REGISTER = 'ADD_REGISTER';
+export const LOGIN = 'LOGIN';
 
-export const CHANGE_VAL_FIELD = (field, value) => ({
-  type: CHANGE_TEXT,
-  field,
+export const addRegister = value => ({
+  type: ADD_REGISTER,
+  data: value,
+});
+
+export const login = value => ({
+  type: LOGIN,
   value,
 });

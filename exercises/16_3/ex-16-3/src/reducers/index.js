@@ -1,17 +1,11 @@
-import { CHANGE_TEXT } from '../actions';
+import { combineReducers } from 'redux';
+import loginReducer from './loginReducer';
+import registerReducer from './registerReducer';
 
-const INITIAL_STATE = {
-  nome: '',
-  email: '',
-};
+const rootReducers = combineReducers({
+  loginReducer,
+  registerReducer,
+});
 
-const loginPageReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case CHANGE_TEXT:
-      return { ...state, [action.field]: action.value };
-    default:
-      return state;
-  }
-};
 
-export default loginPageReducer;
+export default rootReducers;

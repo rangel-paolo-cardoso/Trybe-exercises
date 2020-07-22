@@ -1,18 +1,35 @@
-import React from 'react';
-// import { Provider } from 'react-redux';
+import React, { Component } from 'react';
 import Botao from './componentes/Botao';
-// import store from './store';
 import ClickCounter from './componentes/ClickCounter';
+import Context from './GeneralContext';
 
-function App() {
-  return (
-    <div className="App">
-      {/* <Provider store={store}> */}
-        <ClickCounter />
-        <Botao />
-      {/* </Provider> */}
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+    };
+    this.increment = this.increment.bind(this);
+  }
+  
+  increment() {
+    this.setState((state) => ({ counter: state.counter + 1 }));
+  }
+
+  render() {
+    const contextValue = {
+      counter: this.state.counter,
+      increment: this.increment,
+    };
+    return (
+      <Context.Provider value={contextValue}>
+        <div className="App">
+          <ClickCounter />
+          <Botao />
+        </div>
+      </Context.Provider>
+    );
+  }
 }
 
 export default App;

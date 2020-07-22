@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import Context from '../GeneralContext';
 
 class ClickCounter extends Component {
   render() {
+    const { counter } = this.context;
     return (
       <div>
-        <p>Número de cliques: <span>0</span></p>
+        <p>
+          Número de cliques: <span>{counter}</span>
+        </p>
       </div>
     );
   }
 }
 
-// const mapStateToProps = state => ({
-//   counter: state,
-// });
+ClickCounter.contextType = Context;
 
 export default ClickCounter;
-// export default connect(mapStateToProps)(ClickCounter);

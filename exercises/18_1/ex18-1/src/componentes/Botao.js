@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
-// import { somaClique } from '../actions';
-// import { connect } from 'react-redux';
+import Context from '../GeneralContext';
 
 class Botao extends Component {
   render() {
-    return (
-      <button
-        onClick={() => alert()}
-      >
-        Clique
-      </button>
-      // <button
-      //   onClick={() => this.props.increase()}
-      // >
-      //   Clique
-      // </button>
-    );
+    const { increment } = this.context;
+    return <button onClick={() => increment()}>Clique</button>;
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   increase: () => dispatch(somaClique()),
-// });
+Botao.contextType = Context;
 
 export default Botao;
-// export default connect(null, mapDispatchToProps)(Botao);

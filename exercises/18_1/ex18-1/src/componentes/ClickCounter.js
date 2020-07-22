@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class ClickCounter extends Component {
   render() {
     return (
       <div>
-        <p>Número de cliques: <span>{this.props.counter}</span></p>
+        <p>Número de cliques: <span>0</span></p>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  counter: state,
-});
+// const mapStateToProps = state => ({
+//   counter: state,
+// });
 
-export default connect(mapStateToProps)(ClickCounter);
+export default ClickCounter;
+// export default connect(mapStateToProps)(ClickCounter);

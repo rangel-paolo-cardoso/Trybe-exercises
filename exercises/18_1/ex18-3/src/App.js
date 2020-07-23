@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import TrafficSignal from './TrafficSignal';
+import TrafficSignal from './TrafficSignal';
 import Cars from './Cars';
 import './App.css';
 
@@ -16,13 +16,15 @@ class App extends Component {
         red: false,
         yellow: false,
         blue: false,
-      }
+      },
     };
     this.changeSignal = this.changeSignal.bind(this);
     this.moveCar = this.moveCar.bind(this);
   }
 
-  changeSignal() {}
+  changeSignal(color) {
+    this.setState({ signal: { color } });
+  }
 
   moveCar(car, side) {
     this.setState((state) => ({ cars: { ...state.cars, [car]: side } }));
@@ -37,8 +39,7 @@ class App extends Component {
     return (
       <Context.Provider value={contextValue}>
         <div>
-          oi
-          {/* <TrafficSignal /> */}
+          <TrafficSignal />
           <Cars />
         </div>
       </Context.Provider>

@@ -19,7 +19,6 @@ const renderSignal = (signalColor) => {
 
 const TrafficSignal = () => {
   const { signalColor, setSignalColor } = useContext(FarolContext);
-  console.log(useContext(FarolContext));
   return (
     <div>
       <div className="button-container">

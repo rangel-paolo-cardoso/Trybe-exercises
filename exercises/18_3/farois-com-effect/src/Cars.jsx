@@ -1,42 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TransitoContext } from './context';
 import carBlue from './images/carBlue.jpeg';
 import carRed from './images/carRed.jpeg';
 import carYellow from './images/carYellow.jpeg';
-import { moveCar } from './redux/actionCreators';
-import { connect } from 'react-redux';
 
-const Cars = ({ redCar, blueCar, yellowCar, moveCar }) => (
-  <div>
+const Cars = () => {
+  const {
+    cars,
+    cars: { red, yellow, blue },
+    setCarsPosition,
+  } = useContext(TransitoContext);
+  return (
     <div>
-      <img className={redCar ? 'car-right' : 'car-left'} src={carRed} alt="red car" />
-      <button onClick={() => moveCar('red', !redCar)} type="button">
-        Move
-      </button>
+      <div>
+        <img className={red ? 'car-right' : 'car-left'} src={carRed} alt="red car" />
+        <button onClick={() => setCarsPosition({ ...cars, red: !red })} type="button">
+          Move
+        </button>
+      </div>
+      <div>
+        <img className={blue ? 'car-right' : 'car-left'} src={carBlue} alt="blue car" />
+        <button onClick={() => setCarsPosition({ ...cars, blue: !blue })} type="button">
+          Move
+        </button>
+      </div>
+      <div>
+        <img className={yellow ? 'car-right' : 'car-left'} src={carYellow} alt="yellow car" />
+        <button onClick={() => setCarsPosition({ ...cars, yellow: !yellow })} type="button">
+          Move
+        </button>
+      </div>
     </div>
-    <div>
-      <img className={blueCar ? 'car-right' : 'car-left'} src={carBlue} alt="blue car" />
-      <button onClick={() => moveCar('blue', !blueCar)} type="button">
-        Move
-      </button>
-    </div>
-    <div>
-      <img className={yellowCar ? 'car-right' : 'car-left'} src={carYellow} alt="yellow car" />
-      <button onClick={() => moveCar('yellow', !yellowCar)} type="button">
-        Move
-      </button>
-    </div>
-  </div>
-);
-
-const mapStateToProps = state => {
-  return Object.keys(state.moveCarReducer.cars).reduce((car, key) => {
-    car[`${key}Car`] = state.moveCarReducer.cars[key];
-    return car;
-  }, {});
+  );
 };
 
-const mapDispatchToProps = dispatch => ({
-  moveCar: (cor, side) => dispatch(moveCar(cor, side)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cars);
+export default Cars;

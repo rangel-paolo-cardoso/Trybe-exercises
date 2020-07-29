@@ -1,13 +1,16 @@
 import React from 'react';
+import { Provider } from './context';
 import TrafficSignal from './TrafficSignal';
 import Cars from './Cars';
 import './App.css';
 
-export default function App() {
+const App = () => {
   return (
-    <div>
+    <Provider>
       <TrafficSignal />
       <Cars/>
-    </div>
+    </Provider>
   );
 }
+
+export default App;

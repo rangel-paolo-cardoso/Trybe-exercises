@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TransitoContext } from './context';
 import redSignal from './images/redSignal.jpeg';
 import greenSignal from './images/greenSignal.jpeg';
 import yellowSignal from './images/yellowSignal.jpeg';
-import { connect } from 'react-redux';
-import { changeSignal } from './redux/actionCreators';
 
 const renderSignal = signalColor => {
   if (signalColor === 'red') {
@@ -18,29 +17,24 @@ const renderSignal = signalColor => {
   return null;
 };
 
-const TrafficSignal = ({ signalColor, changeSignal }) => (
-  <div>
-    <div className="button-container">
-      <button onClick={() => changeSignal('red')} type="button">
-        Red
-      </button>
-      <button onClick={() => changeSignal('yellow')} type="button">
-        Yellow
-      </button>
-      <button onClick={() => changeSignal('green')} type="button">
-        Green
-      </button>
+const TrafficSignal = () => {
+  const { signalColor, setSignal } = useContext(TransitoContext);
+  return (
+    <div>
+      <div className="button-container">
+        <button onClick={() => setSignal('red')} type="button">
+          Red
+        </button>
+        <button onClick={() => setSignal('yellow')} type="button">
+          Yellow
+        </button>
+        <button onClick={() => setSignal('green')} type="button">
+          Green
+        </button>
+      </div>
+      <img className="signal" src={renderSignal(signalColor)} alt="Semáforo" />
     </div>
-    <img className="signal" src={renderSignal(signalColor)} alt="Semáforo" />
-  </div>
-);
+  );
+}
 
-const mapStateToProps = state => ({
-  signalColor: state.signalReducer.signal.color,
-});
-
-const mapDispatchToProps = dispatch => ({
-  changeSignal: payload => dispatch(changeSignal(payload)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(TrafficSignal);
+export default TrafficSignal;

@@ -1,0 +1,1 @@
+SELECT DISTINCT building FROM employees;

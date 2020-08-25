@@ -8,4 +8,4 @@ WHERE Warehouse IN (
     WHERE Warehouse = Warehouses.Code
   )
 );
--- tentei, mas nçao deu certo de jeito nenhum.
+-- tentei, mas não deu certo de jeito nenhum.

@@ -1,4 +1,6 @@
 -- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
+CREATE DATABASE IF NOT EXISTS betrybe;
+USE betrybe;
 
 CREATE TABLE Manufacturers (
   Code INTEGER,

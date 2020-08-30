@@ -1,3 +1,4 @@
+-- exercício 1
 CREATE SCHEMA normalization;
 USE normalization;
 

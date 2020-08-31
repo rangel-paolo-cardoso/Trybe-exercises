@@ -1,3 +1,4 @@
+USE sakila;
 CREATE VIEW film_with_categories AS
   SELECT
     f.title,

@@ -41,3 +41,5 @@ db.animais.insertMany([
     paisOrigem: "África do Sul"
   }
 ]);
+
+db.animais.find();

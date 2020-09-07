@@ -64,3 +64,5 @@ db.animais.find();
 db.animais.remove({
   especie: "peixe"
 });
+
+db.animais.count();

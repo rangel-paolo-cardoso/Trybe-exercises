@@ -47,3 +47,5 @@ db.animais.find();
 db.animais.count();
 
 db.animais.find().sort({especie: 1});
+
+db.animais.find().sort({nome: 1}).limit(2);

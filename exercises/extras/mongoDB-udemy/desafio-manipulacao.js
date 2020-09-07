@@ -45,3 +45,5 @@ db.animais.insertMany([
 db.animais.find();
 
 db.animais.count();
+
+db.animais.find().sort({especie: 1});

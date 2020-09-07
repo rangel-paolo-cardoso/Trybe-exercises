@@ -43,3 +43,5 @@ db.animais.insertMany([
 ]);
 
 db.animais.find();
+
+db.animais.count();

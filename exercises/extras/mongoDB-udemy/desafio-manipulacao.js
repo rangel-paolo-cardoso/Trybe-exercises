@@ -66,3 +66,5 @@ db.animais.remove({
 });
 
 db.animais.count();
+
+db.animais.remove({});

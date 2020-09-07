@@ -49,3 +49,12 @@ db.animais.count();
 db.animais.find().sort({especie: 1});
 
 db.animais.find().sort({nome: 1}).limit(2);
+
+db.animais.update(
+  {especie: "ave"},
+  {
+    $set: {
+      especie: "ave tropical"
+    }
+  }
+);

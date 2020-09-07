@@ -70,3 +70,5 @@ db.animais.count();
 db.animais.remove({});
 
 db.animais.find();
+
+db.animais.drop();

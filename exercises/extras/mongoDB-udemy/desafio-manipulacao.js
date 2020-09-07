@@ -60,3 +60,7 @@ db.animais.update(
 );
 
 db.animais.find();
+
+db.animais.remove({
+  especie: "peixe"
+});

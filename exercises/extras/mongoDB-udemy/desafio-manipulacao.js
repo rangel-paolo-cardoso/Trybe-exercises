@@ -5,3 +5,39 @@ db.createCollection('animais');
 show dbs;
 
 show collections;
+
+db.animais.insertMany([
+  {
+    nome: "Periquito",
+    especie: "ave",
+    paisOrigem: "Brasil"
+  },
+  {
+    nome: "Urso",
+    especie: "mamifero",
+    paisOrigem: "Russia"
+  },
+  {
+    nome: "Leão",
+    especie: "felino",
+    paisOrigem: "África do Sul"
+  }
+]);
+
+db.animais.insertMany([
+  {
+    nome: "Panda",
+    especie: "mamifero",
+    paisOrigem: "Japão"
+  },
+  {
+    nome: "Tiranossauro",
+    especie: "carnívoro",
+    paisOrigem: "Estados Unidos"
+  },
+  {
+    nome: "Elefante",
+    especie: "mamifero",
+    paisOrigem: "África do Sul"
+  }
+]);

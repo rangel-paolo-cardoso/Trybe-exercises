@@ -58,3 +58,5 @@ db.animais.update(
     }
   }
 );
+
+db.animais.find();

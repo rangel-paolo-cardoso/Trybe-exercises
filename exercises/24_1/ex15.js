@@ -5,6 +5,9 @@ db.xmen.updateMany(
       "name": "hero_name",
       "true_name": "full_name"
     },
-    $set: { "power": 100 }
+    $set: { "power": 100 },
+    $currentDate: {
+      lastUpdate: { $type: "timestamp" }
+    }
   }
 );

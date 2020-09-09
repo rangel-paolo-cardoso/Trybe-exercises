@@ -24,4 +24,15 @@ db.movies.updateOne(
   }
 );
 
-
+// Query 3
+db.movies.updateOne(
+  {
+    "title": "Batman",
+    "cast.character": "Coringa"
+  },
+  {
+    $push: {
+      "cast.$.actor": "Heath Ledger"
+    }
+  }
+);

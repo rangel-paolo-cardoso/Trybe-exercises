@@ -1,3 +1,4 @@
+// Query 1
 db.movies.updateOne(
   {
     "title": "Batman",
@@ -9,3 +10,18 @@ db.movies.updateOne(
     }
   }
 );
+
+// Query 2
+db.movies.updateOne(
+  {
+    "title": "Batman",
+    "cast.character": "Alfred"
+  },
+  {
+    $push: {
+      "cast.$.actor": "Michael Caine"
+    }
+  }
+);
+
+

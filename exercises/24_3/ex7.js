@@ -1,7 +1,7 @@
 db.movies.find(
   {
     "ratings": {
-      $elemMatch: { $gt: 103 }
+      $elemMatch: { $gte: 100, $lte: 105 }
     }
   },
   {

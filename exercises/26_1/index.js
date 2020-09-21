@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fatorial = require('./functionFatorial');
 
 function validateEntry (input) {
   return !isNaN(parseFloat(input)) || 'Por favor, digite um número válido';
@@ -42,4 +43,24 @@ async function calculaIMC () {
   return;
 }
 
-console.log(calculaIMC());
+function validaFatorial (input) {
+  return !isNaN(parseInt(input)) || 'Entrada inválida! Digite um número inteiro positivo.';
+}
+
+// console.log(calculaIMC());
+async function calcFatorial () {
+  const num = await inquirer.prompt([
+    {
+      name: 'valor',
+      type: 'input',
+      message: 'Digite um número para calcular seu fatorial ',
+      validate: validaFatorial
+    }
+  ]);
+
+  const n = parseInt(num.valor, 10);
+
+  console.log('O fatorial de '+ num.valor + ' é: ' + fatorial(n));
+}
+
+calcFatorial();

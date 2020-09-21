@@ -10,6 +10,6 @@
   "author": "Rangel Paolo <paolorangel199@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "inquirer": "^7.3.3"
   }
 }

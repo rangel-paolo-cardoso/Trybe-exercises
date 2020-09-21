@@ -1,0 +1,15 @@
+{
+  "name": "calcula-imc",
+  "version": "1.0.0",
+  "description": "Calcula o indice de massa corporal de uma pessoa, dados valores sobre peso e altura.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rangel Paolo <paolorangel199@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

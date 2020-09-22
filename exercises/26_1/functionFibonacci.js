@@ -42,7 +42,7 @@ async function fibonacciSequence () {
     validate: validaFibonacci
   }]);
 
-  const quantidade = parseInt(n.valor);
+  const quantidade = parseInt(n.valor, 10);
   console.log(calcFibonacci(quantidade));
   return;
 }

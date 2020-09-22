@@ -15,7 +15,7 @@ async function funcao (param1, param2, param3) {
 async function getData () {
   const params = await inquirer.prompt([
     { name: 'p1', type: 'input', message: 'Digite um número ' },
-    { name: 'p2', type: 'input', message: 'Digite um segund número ' },
+    { name: 'p2', type: 'input', message: 'Digite um segundo número ' },
     { name: 'p3', type: 'input', message: 'Digite um terceiro número ' }
   ]);
 

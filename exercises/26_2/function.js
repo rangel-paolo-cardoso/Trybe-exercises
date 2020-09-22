@@ -1,15 +1,14 @@
 const inquirer = require('inquirer');
 
-function funcao (param1, param2, param3) {
+async function funcao (param1, param2, param3) {
   return new Promise((resolve, reject) => {
     if (isNaN(Number(param1 + param2 + param3))) {
-      return reject('Digite apenas números.');
+      return Promise.reject(new Error('Digite apenas números.'));
     }
     const param1Mais2Vezes3 = (param1 + param2) * param3;
-    if (param1Mais2Vezes3 < 50) {
-      return reject('Valor muito baixo.')
-    }
-    resolve(param1Mais2Vezes3);
+    return param1Mais2Vezes3 < 50
+      ? reject('Valor muito baixo.')
+      : resolve(param1Mais2Vezes3);
   });
 }
 

@@ -1,3 +1,3 @@
 const leArquivoDeFormaSincrona = require('./leituraSincrona');
 
-leArquivoDeFormaSincrona();
+// leArquivoDeFormaSincrona();

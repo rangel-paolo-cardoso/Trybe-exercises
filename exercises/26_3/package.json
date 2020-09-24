@@ -1,0 +1,19 @@
+{
+  "name": "leitura_arquivos",
+  "version": "1.0.0",
+  "description": "Exercicios com fluxo sincrono, entendendo a arquitetura do NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "criar": "node criadorDeArquivo.js",
+    "ex2": "node leituraAssincrona.js",
+    "ex3": "node leituraSincronaDiretorio.js",
+    "ex4": "node leituraAssincronaDiretorio.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rangel Paolo Cardoso Bomfim <paolorangel1996@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

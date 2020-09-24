@@ -1,9 +1,11 @@
 const fs = require('fs');
-const { question } = require('readline-sync');
+const { question, questionInt } = require('readline-sync');
 
 let meuTexto = 'dfngljdfngldsnksdnksd;gmfsdkgnkdfngdfsnglksdnfj,sdngnfsdkgnfd,ng,fdng,nfd,gnfd,mgn,sfdng,sdn,dfmnxbcvnbxmvbd.,jvn,sdjgn,fdjjn.,dfnj.,fdn,fdbv.dfb.nvbfbndfmnbfdmvbfjvbfdj.vfsdj';
 
-for (let i = 0; i < 1200000; i += 1) {
+const quantasRepeticoes = questionInt('quantas vezes pra rodar o loop? (Mínimo 1 milhão) ');
+
+for (let i = 1; i <= quantasRepeticoes; i += 1) {
   meuTexto += 'kfdjbgkjfsdgsdfngdfs.n';
 }
 

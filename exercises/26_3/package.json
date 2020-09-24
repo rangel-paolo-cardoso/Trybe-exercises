@@ -8,6 +8,7 @@
     "criar": "node criadorDeArquivo.js",
     "ex2": "node leituraAssincrona.js",
     "ex3": "node leituraSincronaDiretorio.js",
+    "ex4": "node leituraAssincronaDiretorio.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rangel Paolo Cardoso Bomfim <paolorangel1996@outlook.com>",

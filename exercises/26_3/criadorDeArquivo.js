@@ -20,4 +20,4 @@ function criaArquivo () {
   });
 }
 
-module.exports = criaArquivo;
+criaArquivo();

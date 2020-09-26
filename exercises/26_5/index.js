@@ -14,24 +14,17 @@ const recipes = [
   },
 ];
 
-const validaId = (req, res, next) => {
-  const { id } = req.params;
+const validaId = (request, response, next) => {
+  const { id } = request.params;
   const recipeId = parseInt(id);
-  if (recipeId === NaN) {
-    return res.send('Id invalido');
-  }
+  if (recipeId === NaN) return response.send('Id invalido');
   next();
 };
 
-const encontraId = (id) => {
-  const recipeIndex = recipes.findIndex((recipe) => recipe.id === id);
-  if (recipeIndex) {
-    return recipeIndex;
-  }
-  return null;
-};
+const encontraId = (id) => recipes.findIndex((recipe) => recipe.id === id);
 
 app.use(validaId);
+
 app.delete('/recipe/:id', (req, res) => {
   const { id } = req.params;
   const recipeIndex = encontraId(id);

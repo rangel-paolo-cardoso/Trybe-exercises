@@ -1,18 +1,6 @@
 const express = require('express');
+const recipes = require('./data');
 const app = express();
-
-const recipes = [
-  {
-    id: 12345,
-    name: 'farofa de bacon',
-    ingredientes: ['farofa', 'bacon'],
-  },
-  {
-    id: 12346,
-    name: 'ovo mexido',
-    ingredientes: ['ovo'],
-  },
-];
 
 const validaId = (request, response, next) => {
   const { id } = request.params;

@@ -6,6 +6,4 @@ async function getJokes() {
   return (await axios(URL)).data.joke;
 }
 
-module.exports = {
-  getJokes
-};
+module.exports = getJokes;

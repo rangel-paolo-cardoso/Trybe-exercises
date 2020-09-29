@@ -3,8 +3,7 @@ const axios = require('axios');
 const categoriesURL = 'https://api.chucknorris.io/jokes/categories';
 
 async function getCategories() {
-  const categoires = (await axios(categoriesURL)).data;
-  console.log(categoires);
+  return categoires = (await axios(categoriesURL)).data;
 }
 
 module.exports = getCategories;

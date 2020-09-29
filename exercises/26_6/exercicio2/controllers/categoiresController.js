@@ -5,4 +5,11 @@ async function listCategories(_req, res) {
   res.render('categories/index', { categories });
 }
 
-module.exports = listCategories;
+function redirectToCategories(_red, res) {
+  res.redirect('/categories');
+}
+
+module.exports = {
+  listCategories,
+  redirectToCategories
+};

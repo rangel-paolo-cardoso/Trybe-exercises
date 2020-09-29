@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
-const listCategories = require('./controllers/categoiresController');
+const {
+  listCategories,
+  redirectToCategories
+} = require('./controllers/categoiresController');
 
 // define a engine de visualização para o ejs
 app.set('view engine', 'ejs');
@@ -10,5 +13,7 @@ app.set('views', './views');
 
 // define que controller será usado na rota /categoires
 app.get('/categories', listCategories);
+
+app.get('/', redirectToCategories);
 
 app.listen(3000, () => console.log('Aplicação iniciada!'));

@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/list-products', async (_req, res, next) => {
   const products = await ProductModel.getAll();
 
-  res.send(products);
+  res.status(200).json(products);
 });
 
 router.get('/get-by-id/:id', async (req, res, next) => {

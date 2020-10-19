@@ -1,4 +1,5 @@
 const mysqlx = require('@mysql/xdevapi');
+require('dotenv');
 
 const config = {
   user: process.env.USER,

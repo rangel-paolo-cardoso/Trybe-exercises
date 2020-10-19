@@ -1,4 +1,5 @@
 const connect = require('./connection');
+require('dotenv');
 
 const add = async (name, brand) => {
   try {

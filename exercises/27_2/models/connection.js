@@ -1,8 +1,11 @@
 const mysqlx = require('@mysql/xdevapi');
-require('dotenv');
+const path = require('path');
+const enviromentVariable = path.resolve(__dirname, '..', '.env');
+require('dotenv').config({ path: enviromentVariable }); 
+// require('dotenv');
 
 const config = {
-  user: process.env.USER,
+  user: process.env.MYSQL_USER,
   password: process.env.PASSWORD,
   host: process.env.HOST,
   port: 33060,

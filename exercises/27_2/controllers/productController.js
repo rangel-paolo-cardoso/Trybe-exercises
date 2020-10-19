@@ -4,9 +4,14 @@ const ProductModel = require('../models/productModel');
 const router = express.Router();
 
 router.get('/list-products', async (req, res, next) => {
-  const products = await ProductModel.getAll();
+  try {
+    const products = await ProductModel.getAll();
 
-  res.send(products);
+    res.send(products);
+  } catch (error) {
+    console.log(error.message);
+    console.log(error.name);
+  }
 });
 
 router.get('/get-by-id/:id', async (req, res, next) => {

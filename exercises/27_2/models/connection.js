@@ -17,8 +17,8 @@ const connect = async () => {
     const session = await mysqlx.getSession(config);
     schema = await session.getSchema('rest_exercicios');
     return schema;
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     return process.exit(1);
   }
 };

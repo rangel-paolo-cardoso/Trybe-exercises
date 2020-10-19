@@ -1,5 +1,4 @@
 const connect = require('./connection');
-require('dotenv');
 
 const add = async (name, brand) => {
   try {
@@ -15,6 +14,7 @@ const add = async (name, brand) => {
     return process.exit(1);
   }
 };
+
 
 const getAll = async () => {
   try {
@@ -49,7 +49,7 @@ const getById = async (id) => {
 };
 
 const update = async (id, name, brand) => {
-  try {
+try {
     const db = await connect();
     return db
       .getTable('products')
@@ -66,7 +66,7 @@ const update = async (id, name, brand) => {
 };
 
 const exclude = async (id) => {
-  try {
+    try {
     const db = await connect();
     const product = await getById(id);
     if(!product) return {};

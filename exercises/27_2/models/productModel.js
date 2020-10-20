@@ -19,9 +19,8 @@ const add = async (name, brand) => {
 const getAll = async () => {
   try {
     const db = await connect();
-    const searchDb = await db.getTable('products').select().execute();
-    const results = await searchDb.fetchAll();
-    return results ? results.map(([id, name, brand]) => ({ id, name, brand })) : [];
+    const searchDb = await db.collection('products').find().toArray();
+    return searchDb ? searchDb.map(([id, name, brand]) => ({ id, name, brand })) : [];
   } catch (err) {
     console.error(err);
     return process.exit(1);

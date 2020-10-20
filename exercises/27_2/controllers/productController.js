@@ -27,7 +27,7 @@ router.get('/get-by-id/:id', async (req, res, _next) => {
   res.status(200).json(product);
 });
 
-router.post('/add-user', async (req, res) => {
+router.post('/add-product', async (req, res) => {
   const { name, brand } = req.body;
 
   try {
@@ -42,7 +42,7 @@ router.post('/add-user', async (req, res) => {
   }
 });
 
-router.delete('/delete-user/:id', async (req, res) => {
+router.delete('/delete-product/:id', async (req, res) => {
   const products = await ProductModel.exclude(req.params.id);
 
   try {
@@ -56,12 +56,12 @@ router.delete('/delete-user/:id', async (req, res) => {
   }
 });
 
-router.put('/update-user/:id', async (req, res) => {
+router.put('/update-product/:id', async (req, res) => {
   const { name, brand } = req.body;
 
   try {
-    const products = await ProductModel.update(req.params.id, name, brand);
-    res.status(200).json(products);
+    const product = await ProductModel.update(req.params.id, name, brand);
+    res.status(200).json({ ...product, message: 'Atualizado com sucesso!' });
   } catch (error) {
     res.status(500).json({ message: 'Erro ao tentar atualizar dados do produto!' });
   }

@@ -1,10 +1,13 @@
 const mongoClient = require('mongodb').MongoClient;
-require('dotenv').config();
+const path = require('path');
+const enviromentVariable = path.resolve(__dirname, '..', '.env');
+require('dotenv').config({ path: enviromentVariable });
+// require('dotenv').config();
 
 const connect = async () => {
   try {
     const session = await mongoClient
-      .connect(MONGO_DB_URL, {
+      .connect(process.env.MONGO_DB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });

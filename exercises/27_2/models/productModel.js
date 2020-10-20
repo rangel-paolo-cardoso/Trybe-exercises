@@ -1,14 +1,11 @@
 const connect = require('./connection');
+const { ObjectId } = require('mongodb');
 
 const add = async (name, brand) => {
   try {
     const db = await connect();
-    const result = await db
-      .getTable('products')
-      .insert(['name', 'brand'])
-      .values(name, brand)
-      .execute();
-    return { id: result.getAutoIncrementValue(), name, brand };
+    const result = await db.collection('products').insertOne({ name, brand });
+    return { id: result.insertedId, name, brand };
   } catch (err) {
     console.error(err);
     return process.exit(1);
@@ -20,27 +17,17 @@ const getAll = async () => {
   try {
     const db = await connect();
     const searchDb = await db.collection('products').find().toArray();
-    return searchDb ? searchDb.map(([id, name, brand]) => ({ id, name, brand })) : [];
+    return searchDb || [];
   } catch (err) {
     console.error(err);
     return process.exit(1);
   }
 };
 
-const getById = async (ProductId) => {
+const getById = async (productId) => {
   try {
     const db = await connect();
-    const searchDb = await db
-      .getTable('products')
-      .select()
-      .where('id = :id')
-      .bind('id', ProductId)
-      .execute();
-    const result = await searchDb.fetchAll();
-    if(!result.length) return null;
-    const [[id, name, brand]] = result;
-    return result !== [] ?
-     { id, name, brand } : null;
+    return db.collection('products').findOne(ObjectId(productId));
   } catch (err) {
     console.error(err);
     return process.exit(1);
@@ -50,14 +37,10 @@ const getById = async (ProductId) => {
 const update = async (id, name, brand) => {
 try {
     const db = await connect();
-    return db
-      .getTable('products')
-      .update()
-      .set('name', name)
-      .set('brand', brand)
-      .where('id = :id')
-      .bind('id', id)
-      .execute();
+    const { result } = await db
+      .collection('products')
+      .updateOne({ _id: ObjectId(id) }, { $set: { name, brand } });
+    return result;
   } catch (err) {
     console.error(err);
     return process.exit(1);
@@ -69,11 +52,7 @@ const exclude = async (id) => {
     const db = await connect();
     const product = await getById(id);
     if(!product) return {};
-    await db.getTable('products')
-      .delete()
-      .where('id = :id')
-      .bind('id', id)
-      .execute();
+    await db.collection('products').deleteOne({ _id: ObjectId(id)});
     return product;
   } catch (err) {
     console.error(err);

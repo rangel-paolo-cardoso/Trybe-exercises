@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 const apiRoutes = express.Router();
 apiRoutes.get('/api/posts', validateJWT, routes.getPosts);
+// apiRoutes.post('/api/posts', routes.createPosts);
 apiRoutes.post('/api/users', routes.createUsers);
 apiRoutes.post('/api/login', routes.login);
 

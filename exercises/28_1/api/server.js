@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const apiRoutes = express.Router();
-apiRoutes.get('/api/posts', validateJWT, routes.getPosts);
-// apiRoutes.post('/api/posts', routes.createPosts);
+apiRoutes.get('/api/posts', validateJWT, routes.posts.getPosts);
+apiRoutes.post('/api/posts', validateJWT, routes.posts.createPost);
 apiRoutes.post('/api/users', routes.createUsers);
 apiRoutes.post('/api/login', routes.login);
 

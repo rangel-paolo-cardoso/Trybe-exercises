@@ -35,4 +35,14 @@ app.post('/files/write', async (req, res) => {
   res.send().status(200);
 });
 
+// Não funcionou
+app.get('/files/read/:arquivo', async (req, res) => {
+  const { arquivo } = req.params;
+  const data = await fs.readFile(`uploads/${arquivo}`, (err) => {
+    if (err) throw err;
+    console.log('Done!');
+  });
+  res.status(200).json({ data });
+});
+
 app.listen(3000, () => console.log('Aplicação rodando!'));

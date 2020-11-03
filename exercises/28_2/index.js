@@ -26,9 +26,12 @@ app.post('/files/upload', upload.single('file'), (req, res) => {
   res.send().status(200);
 });
 
-app.post('files/write', async (req, res) => {
-  const { content } = req.body;
-  await fs.writeFile(`./uploads/${Date.now()}.txt`, content, { flag: 'wx' });
+app.post('/files/write', async (req, res) => {
+  const { conteudo } = req.body;
+  await fs.writeFile(`./uploads/${Date.now()}.txt`, conteudo, (err) => {
+    if (err) throw err;
+    console.log('Done!');
+  });
   res.send().status(200);
 });
 

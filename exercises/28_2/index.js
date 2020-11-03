@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
 
+// -------------------------EXERCÍCIO 3------------------------
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     callback(null, 'uploads/');
@@ -25,6 +26,7 @@ app.post('/files/upload', upload.single('file'), (req, res) => {
   console.log('Body: ', req.body);
   res.send().status(200);
 });
+// -------------------------FIM---------------------------------
 
 app.post('/files/write', async (req, res) => {
   const { conteudo } = req.body;

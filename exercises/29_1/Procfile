@@ -1,0 +1,4 @@
+web: node indexProcfile.js
+
+// essa string faz com que o projeto seja executado por um arquivo chamado
+// indexProcfile.js

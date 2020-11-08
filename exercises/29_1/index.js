@@ -65,7 +65,16 @@ console.log(`Example app listening on port port!`);
  * --- Excluír um app
  * heroku apps:delete nome-do-projeto
  * 
- * Declarar variáveis de ambiente
- * heroku config:set NOME_DA_VAR='Valor da VAR' --app nome-do-projeto
+ * --- Declarar variáveis de ambiente
+ * heroku config:set VAR=Valor --app nome-do-projeto
+ * 
+ * --- Declarar várias variáveis de ambiente
+ * heroku config:set VAR1=Valor1 VAR2=valor2 --app nome-do-projeto
+ * 
+ * --- Remover variáveis de ambiente
+ * heroku config:unset NOME_DA_VARIAVEL
+ * 
+ * --- Exibir variáveis de ambiente
+ * heroku config
  * 
 */

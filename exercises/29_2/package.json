@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "",
+    "start": "pm2-runtime start ecosystem.config.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rangel Paolo <paolorangel1996@outlook.com>",

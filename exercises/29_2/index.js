@@ -4,8 +4,9 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Vai ocorrer um erro...');
-  process.exit(1);
+  // res.send('Vai ocorrer um erro...');
+  res.send('Deu certo!');
+  // process.exit(1);
 });
 
 app.listen(port, () =>

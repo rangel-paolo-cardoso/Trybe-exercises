@@ -28,9 +28,16 @@ app.put('/plant/:id', (req, res) => {
   res.send(plantsUpdated);
 });
 
-app.post('/plant', (req, res) => {});
+app.post('/plant', (req, res) => {
+  const newPlant = plantsAPI.createNewPlant(req.body);
+  res.send(newPlant);
+});
 
-app.get('/sunny/:id', (req, res) => {});
+app.get('/sunny/:id', (req, res) => {
+  const { id } = req.params;
+  const plants = plantsAPI.getPlantsThatNeedsSunWithId(Number(id));
+  res.send(plants);
+});
 
 
 app.listen(3000, () => console.log('Aplicação rodando!'));

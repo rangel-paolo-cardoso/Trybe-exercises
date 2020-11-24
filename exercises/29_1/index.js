@@ -16,7 +16,7 @@ console.log(`Example app listening on port port!`);
  * git remote -v
  * 
  * --- Renomear um remote
- * git remote renome nome-do-remote novo-nome
+ * git remote rename nome-do-remote novo-nome
  * 
  * --- Remover um remote
  * git remote rm nome-do-remote
@@ -75,6 +75,6 @@ console.log(`Example app listening on port port!`);
  * heroku config:unset NOME_DA_VARIAVEL
  * 
  * --- Exibir variáveis de ambiente
- * heroku config
+ * heroku config --app nome-do-projeto
  * 
 */

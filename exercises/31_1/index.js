@@ -7,13 +7,26 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/plants', (req, res) => {});
+app.get('/plants', (_req, res) => {
+  const plants = plantsAPI.getPlants();
+  res.send(plants);
+});
 
-app.get('/plant/:id', (req, res) => {});
+app.get('/plant/:id', (req, res) => {
+  const plant = plantsAPI.getPlantById(Number(req.params.id));
+  res.send(plant);
+});
 
-app.delete('/plant/:id', (req, res) => {});
+app.delete('/plant/:id', (req, res) => {
+  const remainingPlants = plantsAPI.removePlantById(Number(req.params.id));
+  res.send(remainingPlants);
+});
 
-app.post('/plant/:id', (req, res) => {});
+app.put('/plant/:id', (req, res) => {
+  const { id } = req.params;
+  const plantsUpdated = plantsAPI.editPlant(Number(id), req.body);
+  res.send(plantsUpdated);
+});
 
 app.post('/plant', (req, res) => {});
 

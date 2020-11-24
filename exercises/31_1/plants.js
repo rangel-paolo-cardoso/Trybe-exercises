@@ -12,9 +12,9 @@ const defaultPlants = [
   {
     id: 2,
     breed: "Orquidea",
-    size: 99,
     needsSun: false,
     origin: "Brazil",
+    size: 99,
   },
 ];
 
@@ -42,19 +42,11 @@ const savePlants = () => {
   localStorage.setItem("plants", plants);
 };
 
-const getPlants = () => {
-  const plants = JSON.parse(localStorage.getItem("plants"));
-  return plants;
-};
+const getPlants = () => [...defaultPlants];
 
-const getPlantById = (id) => {
-  return defaultPlants.filter((plant) => plant.id === id);
-};
+const getPlantById = (id) => defaultPlants.filter((plant) => plant.id === id);
 
-const removePlantById = (id) => {
-  const newPlants = defaultPlants.filter((plant) => plant.id !== id);
-  localStorage.setItem("plants", JSON.stringify(newPlants));
-};
+const removePlantById = (id) => defaultPlants.filter((plant) => plant.id !== id);
 
 const getPlantsThatNeedsSunWithId = (id) => {
   const filteredPlants = defaultPlants.filter((plant) => {
@@ -68,14 +60,8 @@ const getPlantsThatNeedsSunWithId = (id) => {
   return filteredPlants;
 };
 
-const editPlant = (plantId, newPlant) => {
-  return defaultPlants.map((plant) => {
-    if (plant.id === plantId) {
-      return newPlant;
-    }
-    return plant;
-  });
-};
+const editPlant = (plantId, newPlant) =>
+  defaultPlants.map((plant) => (plant.id === plantId ? newPlant : plant));
 
 const createNewPlant = (plant) => {
   const mappedPlant = initPlant({ ...plant });
@@ -84,4 +70,14 @@ const createNewPlant = (plant) => {
   localStorage.setItem("createdPlants", String(createdPlants));
   localStorage.setItem("plants", JSON.stringify(defaultPlants));
   return defaultPlants;
+};
+
+module.exports = {
+  createNewPlant,
+  editPlant,
+  getPlantById,
+  getPlants,
+  getPlantsThatNeedsSunWithId,
+  removePlantById,
+  savePlants,
 };

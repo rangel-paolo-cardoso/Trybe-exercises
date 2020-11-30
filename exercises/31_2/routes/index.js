@@ -20,6 +20,6 @@ router.get('/books/:id', getBookById);
 
 router.post('/book', newBook);
 
-router.put('/book', updateBook);
+router.put('/book/:id', updateBook);
 
 module.exports = router;

@@ -56,8 +56,9 @@ const updateBook = async (req, res) => {
       title,
       author,
       pageQuantity,
+      updatedAt: new Date(),
     },{
-      where: { id: req.params.id }
+      where: { id: req.params.id },
     });
     res.status(200).json(result);
   } catch (error) {

@@ -3,7 +3,7 @@ const Book = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
-  }, { timestamps: false });
+  });
 
   return Book;
 };

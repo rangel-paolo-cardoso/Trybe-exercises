@@ -10,6 +10,19 @@ const getBooks = async (_req, res) => {
   }
 };
 
+const getBooksByAuthor = async (req, res) => {
+  try {
+    console.log(req.params);
+    const books = await Book.findAll({
+      where: { author: req.params.author }
+    });
+    res.status(200).json(books)
+  } catch (error) {
+    console.log('GetBooks: ', error.message);
+    res.status(500).send({ message: 'Algo deu errado!' });
+  }
+};
+
 const getBookById = async (req, res) => {
   try {
     const books = await Book.findByPk(req.params.id);
@@ -66,6 +79,7 @@ const deleteBook = async (req, res) => {
 
 module.exports = {
   getBooks,
+  getBooksByAuthor,
   getBookById,
   newBook,
   updateBook,

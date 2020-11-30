@@ -1,6 +1,7 @@
 const express = require('express');
 const {
   getBooks,
+  getBooksByAuthor,
   getBookById,
   newBook,
   updateBook,
@@ -12,6 +13,8 @@ const router = express.Router();
 router.delete('/book/:id', deleteBook);
 
 router.get('/books', getBooks);
+
+router.get('/books/:author', getBooksByAuthor);
 
 router.get('/books/:id', getBookById);
 

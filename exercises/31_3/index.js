@@ -6,15 +6,14 @@ const {
 const app = express();
 const port = 3000;
 
-
 app.get('/pacients', pacientControllers.listAllPacients);
 
-app.get('/', (req, res) => {});
+app.get('/surgeries', pacientControllers.listAllPacientsAndTheirSurgeries);
 
-app.get('/', (req, res) => {});
+app.get('/plans/:planId', pacientControllers.listPatientsByTheirPlans);
 
-app.get('/', (req, res) => {});
+app.get('/', );
 
-app.get('/', (req, res) => {});
+app.get('/', );
 
 app.listen(port, () => console.log(`Example app listening on port port!`));

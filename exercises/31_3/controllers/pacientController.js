@@ -36,14 +36,17 @@ const listAllPacientsAndTheirSurgeries = async (_req, res) => {
 // que deve ser recebido via requisição,
 // liste os pacientes que o possuem.
 
-const listPatientsByTheirPlans = async (_req, res) => {
+const listPatientsByTheirPlans = async (req, res) => {
   try {
-    const listOfPatients = await Patients
-      .findAll({ include: { model: Plans, as: 'plan' } });
-    if (!listOfPatients) {
-      return res.status(404).send({ message: 'No patients found' });
+    const listOfPlans = await Plans
+      .findAll({
+        where: { plan_id: req.params.planId },
+        include: { model: Patients, as: 'patients' }
+      });
+    if (!listOfPlans) {
+      return res.status(404).send({ message: 'No plans found' });
     }
-    return res.status(200).json(listOfPatients);
+    return res.status(200).json(listOfPlans);
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ message: 'Something is wrong!' });

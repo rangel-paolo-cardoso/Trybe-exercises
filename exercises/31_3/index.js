@@ -10,7 +10,7 @@ app.get('/pacients', pacientControllers.listAllPacients);
 
 app.get('/surgeries', pacientControllers.listAllPacientsAndTheirSurgeries);
 
-app.get('/:planId', pacientControllers.listPatientsByTheirPlans);
+app.get('/plans/:planId', pacientControllers.listPatientsByTheirPlans);
 
 app.get('/', );
 

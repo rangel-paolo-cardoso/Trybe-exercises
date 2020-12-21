@@ -72,7 +72,8 @@ function addOrUpdate(id, name, brand) {
   return products;
 }
 
-module.exports = { add, remove, getAll, getById, addOrUpdate };
+const Product = { add, remove, getAll, getById, addOrUpdate };
 
+// module.exports = { add, remove, getAll, getById, addOrUpdate };
 
 module.exports = Product;

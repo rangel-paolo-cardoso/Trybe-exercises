@@ -1,4 +1,5 @@
-const { getAllProducts } = require('../controllers/productController');
+const controllers = require('../controllers/productController');
+const ProductModel = require('../models/productModel');
 
 describe('Product Controller', () => {
   describe('Testa função getAllProducts', () => {
@@ -9,8 +10,21 @@ describe('Product Controller', () => {
         { id: 3, name: 'MacBook Air', brand: 'Apple' },
       ];
 
-      const response = getAllProducts();
-      expect(response).toStrictEqual(expectedReturn);
+      const getAllSpy = jest
+        .spyOn(ProductModel, 'getAll')
+        .mockReturnValueOnce(expectedReturn);
+      
+      const mockReq = {};
+      const mockRes = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn(),
+      };
+
+      controllers.getAllProducts(mockReq, mockRes);
+      expect(getAllSpy).toBeCalledTimes(1);
+      expect(mockRes.status).toBeCalledWith(200);
+      expect(mockRes.json).toBeCalledWith(expectedReturn);
+      getAllSpy.mockRestore();
     });
   });
 });

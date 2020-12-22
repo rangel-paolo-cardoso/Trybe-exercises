@@ -27,4 +27,31 @@ describe('Product Controller', () => {
       getAllSpy.mockRestore();
     });
   });
+
+  describe('Cria um produto', () => {
+    test('Veirifica se o array aumento de tamanho e retorna um status de 200.', () => {
+      const mockedData = {
+        name: 'Curso de JavaScript',
+        brand: 'Trybe',
+      };
+
+      const addSpy = jest
+        .spyOn(ProductModel, 'add')
+        .mockReturnValueOnce(mockedData);
+      
+      const mockReq = {
+        body: mockedData, 
+      };
+      const mockRes = {
+        status: jest.fn().mockReturnThis(), 
+        json: jest.fn(), 
+      };
+
+      controllers.createProduct(mockReq, mockRes);
+      expect(addSpy).toBeCalledTimes(1);
+      expect(mockRes.status).toBeCalledWith(200);
+      expect(mockRes.json).toBeCalledWith(mockedData);
+      addSpy.mockRestore();
+    });
+  });
 });

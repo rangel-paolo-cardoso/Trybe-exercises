@@ -1,10 +1,10 @@
 const ProductModel = require('../models/productModel');
 
-const getAllProducts = (req, res) => {
+const getAllProducts = (_req, res) => {
   const products = ProductModel.getAll();
 
-  res.status(200);
-  res.json(products);
+  return res.status(200).json(products);
+  // res.json(products);
 };
 
 const getProductById = (req, res) => {

@@ -59,9 +59,7 @@
   </head>
   <body>
     <input autocomplete="off" id="userName" placeholder="Type your user name" />
-    <ul id="mensagens">
-      <li>Rangel</li>
-    </ul>
+    <ul id="mensagens"></ul>
     <form id="formChat">
       <input autocomplete="off" id="mensagemInput" placeholder="Type a message here" />
       <button>Send</button>
@@ -75,6 +73,14 @@
         $('#mensagens').append(`<li><strong>${msg.userName}:</strong> ${msg.typedMessage}</li>`);
       }
 
+      socket.on('previousMessages', function (messages) {
+        messages.forEach((message) => renderMessages(message));
+      });
+
+      socket.on('receivedMessage', function (message) {
+        renderMessages(message);
+      });
+
       $('#formChat').submit(function (e) {
         e.preventDefault();
         const typedMessage = $('#mensagemInput').val();
@@ -83,6 +89,7 @@
           const userMessageInfo = { userName, typedMessage };
           renderMessages(userMessageInfo);
           $('#mensagemInput').val('');
+          socket.emit('sendMessage', userMessageInfo);
         }
       });
     </script>

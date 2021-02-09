@@ -1,0 +1,10 @@
+{
+  "name": "so_simulation",
+  "version": "1.0.0",
+  "description": "Teste de Sistema Operacional",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rangel Paolo paolorangel1996@outlook.com",
+  "license": "ISC"
+}

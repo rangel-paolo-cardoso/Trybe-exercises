@@ -1,6 +1,6 @@
 class MainMemory {
   constructor () {
-    this.loadedMemory = []
+    this.loadedMemory = [];
   }
 
   load (value) {
@@ -8,12 +8,12 @@ class MainMemory {
   }
 
   get (index) {
-    return Number(this.loadedMemory[index]);
+    return parseInt(this.loadedMemory[index]);
   }
 
   clean () {
-    this.loadedMemory = []
+    this.loadedMemory = [];
   }
 }
 
-module.exports = MainMemory
+module.exports = MainMemory;

@@ -1,3 +1,4 @@
+const { log } = require('console');
 const so = require('os');
 
 setInterval(() => {
@@ -6,3 +7,7 @@ setInterval(() => {
   console.log(`RAM Total: ${parseInt(so.totalmem / Math.pow(1024, 2))} MB`);
   console.log(`Memória utilizada pelo sistema: ${parseInt(usedMemory / Math.pow(1024, 2))} MB\n`);
 }, 1000);
+
+// Show in the terminal
+// ps aux | grep number-process
+console.log(`Process ID: ${process.pid}`);

@@ -14,6 +14,7 @@
 //   Lembre-se, a porta padrão para esse protocolo é a 443 , para especificá-la utilize o parâmetro --sport.
 //   Ele utiliza também o protocolo tcp . Para testar sua regra, tente acessar um site pelo navegador que use o protocolo,
 //   como o Youtube, o Google ou o Facebook.
+// Possible answer: sudo iptables -A OUTPUT -p tcp --sport 443 -j REJECT
 
 // Exercício 4 :
 //   Bloqueie agora o tráfego de saída para HTTP. Lembre-se, também é utilizado o protocolo tcp e a porta 80.

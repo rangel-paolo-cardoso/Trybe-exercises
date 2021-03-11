@@ -38,4 +38,19 @@ def calculate_ink_price_and_quantity(square_meters):
     return can_quantity, can_price * can_quantity
 
 
-print(calculate_ink_price_and_quantity(9))
+# Exercise 6
+def triangle_solver(side1, side2, side3):
+    is_triangule = (
+      side1 + side2 > side3 or
+      side2 + side3 > side1 or
+      side3 + side1 > side2
+    )
+
+    if not is_triangule:
+        return 'não é triangulo'
+    elif side1 == side2 == side3:
+        return 'Triângulo Equilátero: três lados iguais;'
+    elif side1 == side2 or side1 == side3:
+        return 'Triângulo Isósceles: quaisquer dois lados iguais;'
+    else:
+        return 'Triângulo Escaleno: três lados diferentes.'

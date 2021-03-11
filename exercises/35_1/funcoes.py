@@ -19,3 +19,12 @@ def asterisk_square(n):
         for column in range(5):
             print('*', end='')
         print()
+
+
+# Exercise 4
+def the_most_long_name(names):
+    most_long = names[0]
+    for name in names:
+        if len(name) > len(most_long):
+            most_long = name
+    return most_long

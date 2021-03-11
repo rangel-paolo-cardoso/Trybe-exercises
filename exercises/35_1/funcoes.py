@@ -54,3 +54,12 @@ def triangle_solver(side1, side2, side3):
         return 'Triângulo Isósceles: quaisquer dois lados iguais;'
     else:
         return 'Triângulo Escaleno: três lados diferentes.'
+
+
+# Bonus 1
+def the_smallest(numbers):
+    smallest = numbers[0]
+    for number in numbers:
+        if number < smallest:
+            smallest = number
+    return smallest

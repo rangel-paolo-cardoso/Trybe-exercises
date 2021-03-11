@@ -67,9 +67,15 @@ def the_smallest(numbers):
 
 # Bonus 2
 def asterisk_tree(n):
-    cicles = 1
-    for row in range(n):
-        for col in range(cicles):
+    for row in range(1, n + 1):
+        for col in range(1, row + 1):
             print('*', end='')
-        cicles += 1
         print()
+
+
+# Bonus 3
+def summation(n):
+    sum = 0
+    for i in range(1, n + 1):
+        sum += i
+    return sum

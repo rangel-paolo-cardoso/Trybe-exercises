@@ -63,3 +63,13 @@ def the_smallest(numbers):
         if number < smallest:
             smallest = number
     return smallest
+
+
+# Bonus 2
+def asterisk_tree(n):
+    cicles = 1
+    for row in range(n):
+        for col in range(cicles):
+            print('*', end='')
+        cicles += 1
+        print()

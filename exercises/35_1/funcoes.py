@@ -28,3 +28,14 @@ def the_most_long_name(names):
         if len(name) > len(most_long):
             most_long = name
     return most_long
+
+
+# Exercise 5
+def calculate_ink_price_and_quantity(square_meters):
+    can_price = 80
+    liters = square_meters // 3
+    can_quantity = liters % 18
+    return can_quantity, can_price * can_quantity
+
+
+print(calculate_ink_price_and_quantity(9))

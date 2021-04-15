@@ -1,0 +1,10 @@
+macaco
+formiga
+baleia
+jacaré
+leão
+girafa
+crocodilo
+hipopotamo
+rinoceronte
+elefante

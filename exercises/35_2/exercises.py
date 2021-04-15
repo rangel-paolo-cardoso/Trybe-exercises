@@ -1,4 +1,6 @@
 import random
+import json
+import csv
 
 
 # exercise 1
@@ -53,4 +55,33 @@ def guess_the_word_with_file():
     return 'You lose'
 
 
-print(guess_the_word_with_file())
+# exercise 4
+with open('books.json') as file:
+    books = json.load(file)
+
+
+def count_books_by_category():
+    categories = {}
+    for book in books:
+        for category in book['categories']:
+            if not categories.get(category):
+                categories[category] = 0
+            categories[category] += 1
+    return categories
+
+
+def record_results():
+    reduced_categories = count_books_by_category()
+    print(reduced_categories)
+    with open('average_per_category.csv', 'w') as file:
+        writer = csv.writer(file)
+
+        headers = ['categoria', 'porcentagem']
+        writer.writerow(headers)
+
+        for item in reduced_categories.items():
+            row = [item, len(reduced_categories.items())]
+            writer.writerow(row)
+
+
+print(record_results())

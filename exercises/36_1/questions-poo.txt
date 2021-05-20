@@ -24,9 +24,15 @@ vendas de uma cafeteria. Como podemos abstrair um pedido?
 Quais as suas características e comportamentos?
 R: Nome do cardápio, acompanhamento, preço, tempo de preparo, forma de pagamento, data/hora do pedido, data/hora de entrega.
 
-Exercício 7: Considerando que uma das características de um pedido pode ser a sua forma de pagamento (cartão alimentação, cartão débito/crédito, dinheiro), como poderíamos definir cada uma das formas de pagamento? E se todas as formas de pagamento tivessem como requisito a autorização antes do pagamento?
-🐦 Um detalhe aqui é que como todos tipos de pagamentos possuem o comportamento de autorização, que podem variar pedido a pedido.
-R:
+Exercício 7: Considerando que uma das características de um pedido pode ser a sua
+forma de pagamento (cartão alimentação, cartão débito/crédito, dinheiro),
+como poderíamos definir cada uma das formas de pagamento? E se todas as formas de
+pagamento tivessem como requisito a autorização antes do pagamento?
+🐦 Um detalhe aqui é que como todos tipos de pagamentos possuem o comportamento de
+autorização, que podem variar pedido a pedido.
+R: A ideia seria criar uma classe abstrata para colocar informações e métodos como:
+varificar autorização (método), tipo de pagamento (atributo),
+e a partir desta classe abstrata especializar cada forma de pagamento.
 
 
 Exercício 8: Imagine um sistema de mensageria em uma empresa de delivery , que notifica uma base de cliente sobre suas promoções. Estas notificações devem ser feitas por email, sms ou push notification e você é a pessoa responsável por modelar este serviço. Defina utilizando a mesma notação dos exercícios anteriores.

@@ -19,8 +19,10 @@ Exercício 5: Notaram que todas estas classes tem características em comum?
 Que tal abstrairmos utilizando a herança em uma classe que represente figuras geométricas em geral? Utilize a mesma notação anterior.
 R: Tamanho do lado, número de lados.
 
-Exercício 6: Vamos mudar um pouco nosso contexto para um sistema de vendas de uma cafeteria. Como podemos abstrair um pedido? Quais as suas características e comportamentos?
-R: 
+Exercício 6: Vamos mudar um pouco nosso contexto para um sistema de
+vendas de uma cafeteria. Como podemos abstrair um pedido?
+Quais as suas características e comportamentos?
+R: Nome do cardápio, acompanhamento, preço, tempo de preparo, forma de pagamento, data/hora do pedido, data/hora de entrega.
 
 Exercício 7: Considerando que uma das características de um pedido pode ser a sua forma de pagamento (cartão alimentação, cartão débito/crédito, dinheiro), como poderíamos definir cada uma das formas de pagamento? E se todas as formas de pagamento tivessem como requisito a autorização antes do pagamento?
 🐦 Um detalhe aqui é que como todos tipos de pagamentos possuem o comportamento de autorização, que podem variar pedido a pedido.

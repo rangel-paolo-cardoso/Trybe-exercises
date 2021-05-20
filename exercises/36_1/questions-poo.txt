@@ -1,0 +1,30 @@
+Exercício 1: Em um contexto de orientação a objetos, como podemos definir o que são mensagens e qual a sua importância?
+R:
+
+Exercício 2: Após definir mensagens, como podemos definir interface e qual a relação entre os conceitos?
+R: 
+
+Exercício 3: Para exercitar nossa capacidade de abstração, vamos modelar algumas partes de um software de geometria. Como poderíamos modelar um objeto retângulo?
+R: 
+
+Exercício 4: E como poderíamos definir um círculo?
+R:
+
+Exercício 5: Notaram que todas estas classes tem características em comum? Que tal abstrairmos utilizando a herança em uma classe que represente figuras geométricas em geral? Utilize a mesma notação anterior.
+R:
+
+Exercício 6: Vamos mudar um pouco nosso contexto para um sistema de vendas de uma cafeteria. Como podemos abstrair um pedido? Quais as suas características e comportamentos?
+R: 
+
+Exercício 7: Considerando que uma das características de um pedido pode ser a sua forma de pagamento (cartão alimentação, cartão débito/crédito, dinheiro), como poderíamos definir cada uma das formas de pagamento? E se todas as formas de pagamento tivessem como requisito a autorização antes do pagamento?
+🐦 Um detalhe aqui é que como todos tipos de pagamentos possuem o comportamento de autorização, que podem variar pedido a pedido.
+R:
+
+
+Exercício 8: Imagine um sistema de mensageria em uma empresa de delivery , que notifica uma base de cliente sobre suas promoções. Estas notificações devem ser feitas por email, sms ou push notification e você é a pessoa responsável por modelar este serviço. Defina utilizando a mesma notação dos exercícios anteriores.
+R:
+
+Exercício 9: Notou que os pilares da orientação a objetos começam a manifestar a medida que fizemos nossos exercícios de modelagem? Que tal agora então modelarmos uma televisão? Será que mais pilares aparecerão?
+🐦 Pense em como encapsular comportamentos como o estado (ligado/desligado), ou a taxa de variação do volume, que muda de TV para TV etc.
+R:
+

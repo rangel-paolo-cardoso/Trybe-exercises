@@ -35,8 +35,17 @@ varificar autorização (método), tipo de pagamento (atributo),
 e a partir desta classe abstrata especializar cada forma de pagamento.
 
 
-Exercício 8: Imagine um sistema de mensageria em uma empresa de delivery , que notifica uma base de cliente sobre suas promoções. Estas notificações devem ser feitas por email, sms ou push notification e você é a pessoa responsável por modelar este serviço. Defina utilizando a mesma notação dos exercícios anteriores.
-R:
+Exercício 8: Imagine um sistema de mensageria em uma empresa de delivery,
+que notifica uma base de cliente sobre suas promoções. Estas notificações
+devem ser feitas por email, sms ou push notification e você é a pessoa responsável
+por modelar este serviço. Defina utilizando a mesma notação dos exercícios anteriores.
+R: Classe abstrata Notification com atributos como,
+Título
+Texto da mensagem,
+identificação do destinatário
+a partir dela criar as classes
+EmailNotification, SMSNotification e PushNotification.
+Nessas classes especializada evoluir os métodos para mandar mensagens de formas diferentes.
 
 Exercício 9: Notou que os pilares da orientação a objetos começam a manifestar a medida que fizemos nossos exercícios de modelagem? Que tal agora então modelarmos uma televisão? Será que mais pilares aparecerão?
 🐦 Pense em como encapsular comportamentos como o estado (ligado/desligado), ou a taxa de variação do volume, que muda de TV para TV etc.

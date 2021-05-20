@@ -3,7 +3,9 @@ R: Mensagens são informações trocadas entre objetos em memória.
 São as informações trocasas que fazem a aplicação funcionar. Sem elas nada aconteceria.
 
 Exercício 2: Após definir mensagens, como podemos definir interface e qual a relação entre os conceitos?
-R: 
+R: Interface é uma camada que intercepta o acesso a funcionalidade,
+Fazemos uma chamada para trocar mensagens por meio da interface para proteger
+o interior do objeto, informações e seu funcionamento.
 
 Exercício 3: Para exercitar nossa capacidade de abstração, vamos modelar algumas partes de um software de geometria. Como poderíamos modelar um objeto retângulo?
 R: 

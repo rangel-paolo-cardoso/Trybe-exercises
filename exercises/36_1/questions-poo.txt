@@ -47,7 +47,17 @@ a partir dela criar as classes
 EmailNotification, SMSNotification e PushNotification.
 Nessas classes especializada evoluir os métodos para mandar mensagens de formas diferentes.
 
-Exercício 9: Notou que os pilares da orientação a objetos começam a manifestar a medida que fizemos nossos exercícios de modelagem? Que tal agora então modelarmos uma televisão? Será que mais pilares aparecerão?
-🐦 Pense em como encapsular comportamentos como o estado (ligado/desligado), ou a taxa de variação do volume, que muda de TV para TV etc.
-R:
-
+Exercício 9: Notou que os pilares da orientação a objetos começam a manifestar a
+medida que fizemos nossos exercícios de modelagem? Que tal agora então modelarmos
+uma televisão? Será que mais pilares aparecerão?
+🐦 Pense em como encapsular comportamentos como o estado (ligado/desligado),
+ou a taxa de variação do volume, que muda de TV para TV etc.
+R: TV passui atributos, cor, tamanho (inch), tipo (LED, LDC, Plasma, Tubo),
+marca, volume, status (desligada).
+Métodos: ligar, desligar, aumentar o volume, diminuir o volume, trocar de canal.
+Atributos como volume e status são privado, um usuário provavelmente não vai colocar
+a mão dentro dos circuitos da TV para ligar os desligar e ainda alterar o volume,
+haverá risco de choque e até morte, por esse motivo temos a interface controle remoto,
+os botões e macanismos do controle fazer a chamada de funções para aumenter e diminuir
+o volume da TV, bem como ligar os desligar o aparelho, protejento a vida do usuário e 
+mantando o funcionamento do produto.

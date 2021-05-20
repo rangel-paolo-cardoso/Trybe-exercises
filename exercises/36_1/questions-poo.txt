@@ -12,7 +12,8 @@ R: Precisamos de atributos como altura, largura, ainda se quisermos
 podemos definir a espessura de seu traço, cor etc.
 
 Exercício 4: E como poderíamos definir um círculo?
-R:
+R: Podemos definir atributos como raio e através de métodos podemos
+exibir seu comprimento de aro, valor de PI, diâmetro, etc. 
 
 Exercício 5: Notaram que todas estas classes tem características em comum? Que tal abstrairmos utilizando a herança em uma classe que represente figuras geométricas em geral? Utilize a mesma notação anterior.
 R:

@@ -1,5 +1,6 @@
 Exercício 1: Em um contexto de orientação a objetos, como podemos definir o que são mensagens e qual a sua importância?
-R:
+R: Mensagens são informações trocadas entre objetos em memória.
+São as informações trocasas que fazem a aplicação funcionar. Sem elas nada aconteceria.
 
 Exercício 2: Após definir mensagens, como podemos definir interface e qual a relação entre os conceitos?
 R: 

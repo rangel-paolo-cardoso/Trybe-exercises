@@ -1,6 +1,6 @@
-def asterisc_square(n):
+def asterisk_square(n):
     for row in range(n):
         print("*" * n)
 
 
-print(asterisc_square(5))
+print(asterisk_square(5))

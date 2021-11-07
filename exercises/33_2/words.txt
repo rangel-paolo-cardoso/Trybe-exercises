@@ -1,0 +1,8 @@
+elephant
+lion
+monkey
+shark
+cat
+dog
+bird
+whale

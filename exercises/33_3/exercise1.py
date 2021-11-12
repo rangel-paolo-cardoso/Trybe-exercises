@@ -10,6 +10,3 @@ def list_generator(n):
         else:
             list.append(i)
     return list
-
-
-# print(list_generator(15))

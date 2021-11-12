@@ -10,7 +10,3 @@ def test_list_generator_return_fizz_when_number_is_divisible_by_three():
     assert list_generator(3) == exemple_list_with_three
     assert list_generator(5) == exemple_list_with_five
     assert list_generator(15) == exemple_list_with_three_and_five
-
-
-# def test_list_generator_return_buzz_when_number_is_divisible_by_five():
-#   exemple_list = [1, 2, "Fizz"]

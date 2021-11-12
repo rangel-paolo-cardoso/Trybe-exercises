@@ -14,6 +14,9 @@ def test_telephone_letters_when_given_a_string_return_a_certain_set_of_numbers()
     thirty_char_length = "1-4663-79338-4663-0985-32568-0923"
     answer_for_thirty_char = "Expressão com mais de 30 caracteres!"
 
+    invalid_char = "///"
+    answer_for_invalid_char = "Expressão com caracteres inválidos!"
+
     assert telephone_letters(
         given_first_test_string
     ) == first_correct_returning_answer
@@ -25,3 +28,5 @@ def test_telephone_letters_when_given_a_string_return_a_certain_set_of_numbers()
     assert telephone_letters(empty_string) == answer_of_empty_string
 
     assert telephone_letters(thirty_char_length) == answer_for_thirty_char
+
+    # assert telephone_letters(invalid_char) == answer_for_invalid_char

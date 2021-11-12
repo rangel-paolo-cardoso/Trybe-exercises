@@ -18,15 +18,11 @@ def telephone_letters(expression):
         return "Expressão com mais de 30 caracteres!"
     for symbol in expression:
         if (symbol == "1") or (symbol == "0") or (symbol == "-"):
-            print('Aqui 1')
-            print(symbol)
             converted_expression += symbol
-        # elif (not symbol.isalpha()) or (not symbol.isdigit()):
-        #   converted_expression = "Expressão com caracteres inválidos!"
-        #   print('Aqui 2')
-        #   break
+        elif (not symbol.isalpha()) and (not symbol.isdigit()) and symbol != "-":
+            converted_expression = "Expressão com caracteres inválidos!"
+            break
         else:
-            print('Aqui 3')
             for key in telephone_strutcture.keys():
                 if symbol in key:
                     converted_expression += str(telephone_strutcture[key])

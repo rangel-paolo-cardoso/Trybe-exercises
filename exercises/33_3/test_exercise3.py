@@ -22,4 +22,4 @@ def test_validate_email_if_the_function_validates_it_correctly():
 
     assert validate_email(user_name_invalid_char) == user_name_invalid_message
 
-    assert validate_email(website_name_invalid) == website_name_invalid_message
+    assert validate_email(extension_invalid) == extension_invalid_message

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+}
+
+.card {
+  background-image: radial-gradient(blue, rgb(0, 0, 114));
+  border-radius: 10px;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  height: 150px;
+  text-align: center;
+  width: 200px;
+}
+
+.card p:first-child {
+  font-weight: 700;
+}

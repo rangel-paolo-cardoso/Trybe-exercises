@@ -18,5 +18,29 @@ print("=" * 5, "Exercise 2", "=" * 5)
 list1 = [1, 2, 3, 4, 5]
 list2 = [5, 14, 16]
 print(f"List average 1: {arithmeric_average(list1)}")  # Expected = 3.0
-print(f"List average 2: {arithmeric_average(list2)}")
+print(f"List average 2: {arithmeric_average(list2)}")  # Expected = 11.6...
+print()
+
+
+def asteristic_square(n):
+    for number in range(n):
+        print("*" * n)
+
+
+print("=" * 5, "Exercise 3", "=" * 5)
+asteristic_square(5)
+print()
+
+
+def longest_name(name_list):
+    big_name = name_list[0]
+    for name in name_list:
+        if len(name) > len(big_name):
+            big_name = name
+    return big_name
+
+
+print("=" * 5, "Exercise 4", "=" * 5)
+name_list = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]
+print(longest_name(name_list))
 print()

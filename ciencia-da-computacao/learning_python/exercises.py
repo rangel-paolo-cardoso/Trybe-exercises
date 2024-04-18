@@ -67,3 +67,28 @@ print(
     f"square meter is {calculate_amount_of_paint(wall_size)}"
 )
 print()
+
+
+# Exercise 6
+def define_triangle_type(side_1, side_2, side_3):
+    triangle = (
+        side_1 + side_2 > side_3 and
+        side_2 + side_3 > side_1 and
+        side_3 + side_1 > side_2
+    )
+    if not triangle:
+        return "That's not a triangle"
+    elif side_1 == side_2 == side_3:
+        return "equilateral"
+    elif side_1 == side_2 or side_2 == side_3 or side_3 == side_1:
+        return "isosceles"
+    else:
+        return "scalene"
+
+
+print("=" * 5, "Exercise 6", "=" * 5)
+side_1 = float(input("Enter the first side of a triangle: "))
+side_2 = float(input("Enter the second side of a triangle: "))
+side_3 = float(input("Enter the third side of a triangle: "))
+print(f"{define_triangle_type(side_1, side_2, side_3)}")
+print()

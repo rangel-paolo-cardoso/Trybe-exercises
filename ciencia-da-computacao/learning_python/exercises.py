@@ -114,3 +114,18 @@ list = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
 print(f"Minimum value of the list is {minimum_value_1(list)}")
 print(f"Minimum value of the list is {minimum_value_2(list)}")
 print()
+
+
+# Exercise Bonus 2
+def asteristc_triangle_rectangle(n):
+    counter = 1
+    for current in range(n):
+        print("*" * counter)
+        counter += 1
+    return
+
+
+print("=" * 5, "Exercise Bonus 2", "=" * 5)
+n = 5
+asteristc_triangle_rectangle(n)
+print()

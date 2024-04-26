@@ -92,3 +92,25 @@ side_2 = float(input("Enter the second side of a triangle: "))
 side_3 = float(input("Enter the third side of a triangle: "))
 print(f"{define_triangle_type(side_1, side_2, side_3)}")
 print()
+
+
+# Exercise Bonus 1
+def minimum_value_1(list):
+    minimum = list[0]
+    position = 0
+    while position < len(list):
+        if (list[position] < minimum):
+            minimum = list[position]
+        position += 1
+    return minimum
+
+
+def minimum_value_2(list):
+    return min(list)
+
+
+print("=" * 5, "Exercise Bonus 1", "=" * 5)
+list = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
+print(f"Minimum value of the list is {minimum_value_1(list)}")
+print(f"Minimum value of the list is {minimum_value_2(list)}")
+print()

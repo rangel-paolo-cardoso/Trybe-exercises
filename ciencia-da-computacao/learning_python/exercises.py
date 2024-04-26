@@ -148,3 +148,25 @@ n = int(input("Enter a number greather than zero: "))
 print(f"Summation_1: {summation_1(n)}")
 print(f"Summation_2: {summation_2(n)}")
 print()
+
+
+# Exercise Bonus 4
+def fuel_total_price(fuel_liters, fuel_type):
+    gasoline_price = 2.5
+    alcohol_price = 1.9
+    discount = 0
+    total = 0
+    if fuel_type.upper() == "G":
+        discount = (4 / 100) if fuel_liters <= 20 else (6 / 100)
+        total = (fuel_liters * gasoline_price) * (1 - discount)
+    if fuel_type.upper() == "A":
+        discount = (3 / 100) if fuel_liters <= 20 else (5 / 100)
+        total = (fuel_liters * alcohol_price) * (1 - discount)
+    return total
+
+
+print("=" * 5, "Exercise Bonus 4", "=" * 5)
+fuel_liters = int(input("Enter the amout in liters of a certain fuel: "))
+fuel_type = input("Enter the fuel type -> A - Alcohol, G - Gasoline: ")
+print(f"Fuel total price: {fuel_total_price(fuel_liters, fuel_type)}")
+print()

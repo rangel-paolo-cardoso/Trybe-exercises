@@ -126,6 +126,25 @@ def asteristc_triangle_rectangle(n):
 
 
 print("=" * 5, "Exercise Bonus 2", "=" * 5)
-n = 5
+n = int(input("Enter a number greather than zero: "))
 asteristc_triangle_rectangle(n)
+print()
+
+
+# Exercise Bonus 3
+def summation_1(n):
+    sum = 0
+    for count in range(1, n + 1):
+        sum += count
+    return sum
+
+
+def summation_2(n):
+    return sum(range(1, n + 1))
+
+
+print("=" * 5, "Exercise Bonus 3", "=" * 5)
+n = int(input("Enter a number greather than zero: "))
+print(f"Summation_1: {summation_1(n)}")
+print(f"Summation_2: {summation_2(n)}")
 print()
